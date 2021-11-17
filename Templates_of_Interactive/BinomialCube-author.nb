@@ -1,0 +1,1844 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     75562,       1835]
+NotebookOptionsPosition[     71992,       1725]
+NotebookOutlinePosition[     73618,       1777]
+CellTagsIndexPosition[     73290,       1765]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Binomial Cube", "DemoTitle",
+ CellChangeTimes->{{3.532880565691435*^9, 3.532880568359494*^9}}],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Opacity", "[", "0.4", "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{"showlabels", ",", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               SuperscriptBox[
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "3"], ",", 
+               "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "/", "2"}]}], "}"}]}], "]"}], ",", " ", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               SuperscriptBox[
+                RowBox[{"Style", "[", 
+                 RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "3"], ",", 
+               "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  SuperscriptBox[
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}]}], "}"}], 
+                "]"}], ",", "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "/", "2"}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  SuperscriptBox[
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}]}], "}"}], 
+                "]"}], ",", "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "/", "2"}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  SuperscriptBox[
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}]}], "}"}], 
+                "]"}], ",", "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  SuperscriptBox[
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}]}], "}"}], 
+                "]"}], ",", "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  SuperscriptBox[
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}]}], "}"}], 
+                "]"}], ",", "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "/", "2"}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}]}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Row", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  SuperscriptBox[
+                   RowBox[{"Style", "[", 
+                    RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+                  RowBox[{"Style", "[", 
+                   RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}]}], "}"}], 
+                "]"}], ",", "Large", ",", "Black"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "+", 
+                RowBox[{"(", 
+                 RowBox[{"b", "/", "2"}], ")"}]}], ",", 
+               RowBox[{"a", "/", "2"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], 
+       ",", "\[IndentingNewLine]", "a3color", ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", "a", ",", "a"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "b3color", ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", ",", "a", ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"a", "+", "b"}], ",", 
+           RowBox[{"a", "+", "b"}], ",", 
+           RowBox[{"a", "+", "b"}]}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "a2bcolor", ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"a", "+", "b"}], ",", "a", ",", "a"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "a", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", 
+           RowBox[{"a", "+", "b"}], ",", "a"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", "a", ",", 
+           RowBox[{"a", "+", "b"}]}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", "b2acolor", ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "a", ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", 
+           RowBox[{"a", "+", "b"}], ",", 
+           RowBox[{"a", "+", "b"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", ",", "0", ",", "a"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"a", "+", "b"}], ",", "a", ",", 
+           RowBox[{"a", "+", "b"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"Cubitos", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a", ",", "a", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"a", "+", "b"}], ",", 
+           RowBox[{"a", "+", "b"}], ",", "a"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"Text", "@", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<(\>\"", ",", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], ",", "\"\< + \>\"", 
+          ",", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], ",", 
+          "\"\<\!\(\*SuperscriptBox[\()\), \(3\)]\)\>\"", ",", "\"\< = \>\"", 
+          ",", " ", 
+          SuperscriptBox[
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "3"], ",", 
+          "\"\< + \>\"", ",", 
+          SuperscriptBox[
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "3"], ",", 
+          "\"\< + \>\"", ",", "3", ",", " ", 
+          SuperscriptBox[
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], ",", "\"\< + \>\"", 
+          ",", " ", "3", ",", 
+          SuperscriptBox[
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}]}], "}"}], "]"}]}]}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"SphericalRegion", "\[Rule]", " ", "True"}], ",", " ", 
+     RowBox[{"Boxed", "\[Rule]", "False"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1"}], "}"}], ",", "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", " ", "2"}], "}"}], ",", "0", ",", "10", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"showlabels", ",", "False", ",", "\"\<show labels\>\""}], "}"}],
+      ",", 
+     RowBox[{"{", 
+      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a3color", ",", "Blue", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Text", "@", 
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "3"], ",", 
+             "\"\< monomial\>\""}], "}"}], "]"}]}], ",", "10"}], "]"}]}], 
+      "}"}], ",", "Blue", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "ColorSlider"}], ",", " ", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b3color", ",", "Green", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Text", "@", 
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "3"], ",", 
+             "\"\< monomial\>\""}], "}"}], "]"}]}], ",", "10"}], "]"}]}], 
+      "}"}], ",", "Green", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "ColorSlider"}], ",", " ", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a2bcolor", ",", "Purple", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Text", "@", 
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], ",", 
+             "\"\< monomials\>\""}], "}"}], "]"}]}], ",", "10"}], "]"}]}], 
+      "}"}], ",", "Purple", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "ColorSlider"}], ",", " ", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b2acolor", ",", "Yellow", ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Text", "@", 
+          RowBox[{"Row", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             SuperscriptBox[
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<b\>\"", ",", "Italic"}], "]"}], "2"], ",", 
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<a\>\"", ",", "Italic"}], "]"}], ",", 
+             "\"\< monomials\>\""}], "}"}], "]"}]}], ",", "10"}], "]"}]}], 
+      "}"}], ",", "Yellow", ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "ColorSlider"}], ",", " ", 
+     RowBox[{"ControlPlacement", "\[Rule]", "Right"}]}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Cubitos", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"x1_", ",", "y1_", ",", "z1_"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x2_", ",", "y2_", ",", "z2_"}], "}"}]}], "]"}], ":=", 
+      RowBox[{"Cuboid", "/@", 
+       RowBox[{"DeleteDuplicates", "[", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"j", ",", "k", ",", "l"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", "x1", ",", 
+              RowBox[{"x2", "-", "1"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "y1", ",", 
+              RowBox[{"y2", "-", "1"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"l", ",", "z1", ",", 
+              RowBox[{"z2", "-", "1"}]}], "}"}]}], "]"}], ",", "2"}], "]"}], 
+        "]"}]}]}], "}"}]}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.5328707693774996`*^9, 3.5328707960940275`*^9}, {
+   3.5328717448067584`*^9, 3.532871748086763*^9}, {3.532871830441985*^9, 
+   3.5328718814352655`*^9}, {3.532872247777011*^9, 3.5328722650774417`*^9}, {
+   3.5328730572253265`*^9, 3.5328730637616997`*^9}, {3.532873129412455*^9, 
+   3.532873178369255*^9}, {3.532874061459382*^9, 3.5328740680393915`*^9}, {
+   3.532874182259181*^9, 3.532874190043595*^9}, {3.532874426445582*^9, 
+   3.5328744983985033`*^9}, {3.5328746028946753`*^9, 
+   3.5328746664767647`*^9}, {3.5328747017704144`*^9, 3.532874836491036*^9}, {
+   3.5328749332811713`*^9, 3.532874980226037*^9}, {3.532875117994134*^9, 
+   3.5328751536641836`*^9}, {3.532875259355158*^9, 3.532875452315447*^9}, {
+   3.5328770345011115`*^9, 3.532877088787216*^9}, {3.532877126033347*^9, 
+   3.5328771481096096`*^9}, 3.5328773265938177`*^9, {3.532877369227257*^9, 
+   3.532877375821634*^9}, {3.5328775646574345`*^9, 3.532877584471568*^9}, {
+   3.5328806355781717`*^9, 3.5328806729761124`*^9}, {3.532881263423893*^9, 
+   3.532881263594903*^9}, {3.532881331222291*^9, 3.5328813313332973`*^9}, {
+   3.5328897714449663`*^9, 3.5328898959750414`*^9}, {3.532889944503666*^9, 
+   3.532889955747122*^9}, {3.5328900008275447`*^9, 3.5328902190341425`*^9}, {
+   3.53289028805583*^9, 3.5328902908134403`*^9}, {3.532890459335181*^9, 
+   3.5328905477362165`*^9}, {3.5328911544291525`*^9, 
+   3.5328911892039194`*^9}, {3.53295507509798*^9, 3.532955093897026*^9}, {
+   3.532955124945314*^9, 3.532955125377244*^9}, {3.53295519702876*^9, 
+   3.532955348018402*^9}, {3.532955392105139*^9, 3.53295559053511*^9}, {
+   3.532955623871777*^9, 3.532955725113606*^9}},
+ CellID->121727309],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 1, $CellContext`a2bcolor$$ = RGBColor[
+    0.5, 0, 0.5], $CellContext`a3color$$ = RGBColor[
+    0, 0, 1], $CellContext`b$$ = 2, $CellContext`b2acolor$$ = RGBColor[
+    1, 1, 0], $CellContext`b3color$$ = RGBColor[
+    0, 1, 0], $CellContext`showlabels$$ = False, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 1}, 0, 10, 1}, {{
+       Hold[$CellContext`b$$], 2}, 0, 10, 1}, {{
+       Hold[$CellContext`showlabels$$], False, "show labels"}, {
+      True, False}}, {{
+       Hold[$CellContext`a3color$$], 
+       RGBColor[0, 0, 1], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 0, 1]}, {{
+       Hold[$CellContext`b3color$$], 
+       RGBColor[0, 1, 0], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 1, 0]}, {{
+       Hold[$CellContext`a2bcolor$$], 
+       RGBColor[0.5, 0, 0.5], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^2, 
+           Style["b", Italic], " monomials"}]], 10]}, 
+      RGBColor[0.5, 0, 0.5]}, {{
+       Hold[$CellContext`b2acolor$$], 
+       RGBColor[1, 1, 0], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^2, 
+           Style["a", Italic], " monomials"}]], 10]}, 
+      RGBColor[1, 1, 0]}}, Typeset`size$$ = {360., {186., 190.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`a$123354$$ = 0, $CellContext`b$123355$$ = 
+    0, $CellContext`showlabels$123356$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 1, $CellContext`a2bcolor$$ = 
+        RGBColor[0.5, 0, 0.5], $CellContext`a3color$$ = 
+        RGBColor[0, 0, 1], $CellContext`b$$ = 2, $CellContext`b2acolor$$ = 
+        RGBColor[1, 1, 0], $CellContext`b3color$$ = 
+        RGBColor[0, 1, 0], $CellContext`showlabels$$ = False}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$123354$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$123355$$, 0], 
+        Hold[$CellContext`showlabels$$, $CellContext`showlabels$123356$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.4], 
+         If[$CellContext`showlabels$$, {
+           Text[
+            Style[
+            Style["a", Italic]^3, Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+            Style["b", Italic]^3, Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2}]}], $CellContext`a3color$$, 
+         $CellContext`Cubitos[{0, 0, 
+          0}, {$CellContext`a$$, $CellContext`a$$, $CellContext`a$$}], \
+$CellContext`b3color$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], \
+$CellContext`a2bcolor$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, 0, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, 
+           0}, {$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, 0, $CellContext`a$$}, {$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$}], $CellContext`b2acolor$$, 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, $CellContext`a$$}, {$CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, 
+           0, $CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$}]}, PlotLabel -> Text[
+          Row[{"(", 
+            Style["a", Italic], " + ", 
+            Style["b", Italic], "\!\(\*SuperscriptBox[\()\), \(3\)]\)", " = ",
+             Style["a", Italic]^3, " + ", Style["b", Italic]^3, " + ", 3, 
+            Style["a", Italic]^2, 
+            Style["b", Italic], " + ", 3, Style["b", Italic]^2, 
+            Style["a", Italic]}]], SphericalRegion -> True, Boxed -> False], 
+      "Specifications" :> {{{$CellContext`a$$, 1}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`b$$, 2}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`showlabels$$, False, "show labels"}, {
+         True, False}}, {{$CellContext`a3color$$, 
+          RGBColor[0, 0, 1], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 0, 1], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`b3color$$, 
+          RGBColor[0, 1, 0], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`a2bcolor$$, 
+          RGBColor[0.5, 0, 0.5], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^2, 
+              Style["b", Italic], " monomials"}]], 10]}, 
+         RGBColor[0.5, 0, 0.5], ImageSize -> Tiny, ControlType -> ColorSlider,
+          ControlPlacement -> Right}, {{$CellContext`b2acolor$$, 
+          RGBColor[1, 1, 0], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^2, 
+              Style["a", Italic], " monomials"}]], 10]}, 
+         RGBColor[1, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{567., {253., 259.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Cubitos[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`y1, 
+           Blank[]], 
+          Pattern[$CellContext`z1, 
+           Blank[]]}, {
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`y2, 
+           Blank[]], 
+          Pattern[$CellContext`z2, 
+           Blank[]]}] := Map[Cuboid, 
+         DeleteDuplicates[
+          Flatten[
+           
+           Table[{$CellContext`j, $CellContext`k, $CellContext`l}, \
+{$CellContext`j, $CellContext`x1, $CellContext`x2 - 
+             1}, {$CellContext`k, $CellContext`y1, $CellContext`y2 - 
+             1}, {$CellContext`l, $CellContext`z1, $CellContext`z2 - 1}], 
+           2]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1663935421]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "The cube of a binomial is the sum of four terms: the two cubes, three times \
+the square of the first times the second, and three times the square of the \
+second times the first. In symbols, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"a", "+", "b"}], ")"}], "3"], "=", 
+    RowBox[{
+     SuperscriptBox["a", "3"], "+", 
+     SuperscriptBox["b", "3"], "+", 
+     RowBox[{"3", 
+      SuperscriptBox["a", "2"], "b"}], "+", 
+     RowBox[{"3", "a", " ", 
+      SuperscriptBox["b", "2"]}]}]}], TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ ". This Demonstration shows the decomposition of the volume of a binomial \
+cube into each one of its terms and these in turn into unit cubes."
+}], "ManipulateCaption",
+ CellChangeTimes->{{3.5328811642577467`*^9, 3.5328811711477404`*^9}, {
+  3.53295576213548*^9, 3.532955934945846*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 3, $CellContext`a2bcolor$$ = RGBColor[
+    1., 0., 0.], $CellContext`a3color$$ = RGBColor[
+    0, 0, 1], $CellContext`b$$ = 6, $CellContext`b2acolor$$ = RGBColor[
+    1, 1, 0], $CellContext`b3color$$ = RGBColor[
+    0., 1., 0.], $CellContext`showlabels$$ = False, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 3}, 0, 10, 1}, {{
+       Hold[$CellContext`b$$], 6}, 0, 10, 1}, {{
+       Hold[$CellContext`showlabels$$], False, "show labels"}, {
+      True, False}}, {{
+       Hold[$CellContext`a3color$$], 
+       RGBColor[0, 0, 1], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 0, 1]}, {{
+       Hold[$CellContext`b3color$$], 
+       RGBColor[0., 1., 0.], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 1, 0]}, {{
+       Hold[$CellContext`a2bcolor$$], 
+       RGBColor[1., 0., 0.], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^2, 
+           Style["b", Italic], " monomials"}]], 10]}, 
+      RGBColor[0.5, 0, 0.5]}, {{
+       Hold[$CellContext`b2acolor$$], 
+       RGBColor[1, 1, 0], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^2, 
+           Style["a", Italic], " monomials"}]], 10]}, 
+      RGBColor[1, 1, 0]}}, Typeset`size$$ = {360., {186., 190.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`a$123428$$ = 0, $CellContext`b$123429$$ = 
+    0, $CellContext`showlabels$123430$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 3, $CellContext`a2bcolor$$ = 
+        RGBColor[1., 0., 0.], $CellContext`a3color$$ = 
+        RGBColor[0, 0, 1], $CellContext`b$$ = 6, $CellContext`b2acolor$$ = 
+        RGBColor[1, 1, 0], $CellContext`b3color$$ = 
+        RGBColor[0., 1., 0.], $CellContext`showlabels$$ = False}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$123428$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$123429$$, 0], 
+        Hold[$CellContext`showlabels$$, $CellContext`showlabels$123430$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.4], 
+         If[$CellContext`showlabels$$, {
+           Text[
+            Style[
+            Style["a", Italic]^3, Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+            Style["b", Italic]^3, Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2}]}], $CellContext`a3color$$, 
+         $CellContext`Cubitos[{0, 0, 
+          0}, {$CellContext`a$$, $CellContext`a$$, $CellContext`a$$}], \
+$CellContext`b3color$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], \
+$CellContext`a2bcolor$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, 0, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, 
+           0}, {$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, 0, $CellContext`a$$}, {$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$}], $CellContext`b2acolor$$, 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, $CellContext`a$$}, {$CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, 
+           0, $CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$}]}, PlotLabel -> Text[
+          Row[{"(", 
+            Style["a", Italic], " + ", 
+            Style["b", Italic], "\!\(\*SuperscriptBox[\()\), \(3\)]\)", " = ",
+             Style["a", Italic]^3, " + ", Style["b", Italic]^3, " + ", 3, 
+            Style["a", Italic]^2, 
+            Style["b", Italic], " + ", 3, Style["b", Italic]^2, 
+            Style["a", Italic]}]], SphericalRegion -> True, Boxed -> False], 
+      "Specifications" :> {{{$CellContext`a$$, 3}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`b$$, 6}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`showlabels$$, False, "show labels"}, {
+         True, False}}, {{$CellContext`a3color$$, 
+          RGBColor[0, 0, 1], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 0, 1], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`b3color$$, 
+          RGBColor[0., 1., 0.], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`a2bcolor$$, 
+          RGBColor[1., 0., 0.], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^2, 
+              Style["b", Italic], " monomials"}]], 10]}, 
+         RGBColor[0.5, 0, 0.5], ImageSize -> Tiny, ControlType -> ColorSlider,
+          ControlPlacement -> Right}, {{$CellContext`b2acolor$$, 
+          RGBColor[1, 1, 0], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^2, 
+              Style["a", Italic], " monomials"}]], 10]}, 
+         RGBColor[1, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{567., {253., 259.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Cubitos[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`y1, 
+           Blank[]], 
+          Pattern[$CellContext`z1, 
+           Blank[]]}, {
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`y2, 
+           Blank[]], 
+          Pattern[$CellContext`z2, 
+           Blank[]]}] := Map[Cuboid, 
+         DeleteDuplicates[
+          Flatten[
+           
+           Table[{$CellContext`j, $CellContext`k, $CellContext`l}, \
+{$CellContext`j, $CellContext`x1, $CellContext`x2 - 
+             1}, {$CellContext`k, $CellContext`y1, $CellContext`y2 - 
+             1}, {$CellContext`l, $CellContext`z1, $CellContext`z2 - 1}], 
+           2]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1230569513]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 7, $CellContext`a2bcolor$$ = RGBColor[
+    0.5019607843137255, 0., 1.], $CellContext`a3color$$ = RGBColor[
+    0., 1., 1.], $CellContext`b$$ = 1, $CellContext`b2acolor$$ = RGBColor[
+    1, 1, 0], $CellContext`b3color$$ = RGBColor[
+    1., 0., 0.], $CellContext`showlabels$$ = False, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 7}, 0, 10, 1}, {{
+       Hold[$CellContext`b$$], 1}, 0, 10, 1}, {{
+       Hold[$CellContext`showlabels$$], False, "show labels"}, {
+      True, False}}, {{
+       Hold[$CellContext`a3color$$], 
+       RGBColor[0., 1., 1.], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 0, 1]}, {{
+       Hold[$CellContext`b3color$$], 
+       RGBColor[1., 0., 0.], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 1, 0]}, {{
+       Hold[$CellContext`a2bcolor$$], 
+       RGBColor[0.5019607843137255, 0., 1.], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^2, 
+           Style["b", Italic], " monomials"}]], 10]}, 
+      RGBColor[0.5, 0, 0.5]}, {{
+       Hold[$CellContext`b2acolor$$], 
+       RGBColor[1, 1, 0], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^2, 
+           Style["a", Italic], " monomials"}]], 10]}, 
+      RGBColor[1, 1, 0]}}, Typeset`size$$ = {360., {186., 190.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`a$123502$$ = 0, $CellContext`b$123503$$ = 
+    0, $CellContext`showlabels$123504$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 7, $CellContext`a2bcolor$$ = 
+        RGBColor[0.5019607843137255, 0., 1.], $CellContext`a3color$$ = 
+        RGBColor[0., 1., 1.], $CellContext`b$$ = 1, $CellContext`b2acolor$$ = 
+        RGBColor[1, 1, 0], $CellContext`b3color$$ = 
+        RGBColor[1., 0., 0.], $CellContext`showlabels$$ = False}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$123502$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$123503$$, 0], 
+        Hold[$CellContext`showlabels$$, $CellContext`showlabels$123504$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.4], 
+         If[$CellContext`showlabels$$, {
+           Text[
+            Style[
+            Style["a", Italic]^3, Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+            Style["b", Italic]^3, Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2}]}], $CellContext`a3color$$, 
+         $CellContext`Cubitos[{0, 0, 
+          0}, {$CellContext`a$$, $CellContext`a$$, $CellContext`a$$}], \
+$CellContext`b3color$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], \
+$CellContext`a2bcolor$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, 0, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, 
+           0}, {$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, 0, $CellContext`a$$}, {$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$}], $CellContext`b2acolor$$, 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, $CellContext`a$$}, {$CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, 
+           0, $CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$}]}, PlotLabel -> Text[
+          Row[{"(", 
+            Style["a", Italic], " + ", 
+            Style["b", Italic], "\!\(\*SuperscriptBox[\()\), \(3\)]\)", " = ",
+             Style["a", Italic]^3, " + ", Style["b", Italic]^3, " + ", 3, 
+            Style["a", Italic]^2, 
+            Style["b", Italic], " + ", 3, Style["b", Italic]^2, 
+            Style["a", Italic]}]], SphericalRegion -> True, Boxed -> False], 
+      "Specifications" :> {{{$CellContext`a$$, 7}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`b$$, 1}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`showlabels$$, False, "show labels"}, {
+         True, False}}, {{$CellContext`a3color$$, 
+          RGBColor[0., 1., 1.], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 0, 1], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`b3color$$, 
+          RGBColor[1., 0., 0.], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`a2bcolor$$, 
+          RGBColor[0.5019607843137255, 0., 1.], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^2, 
+              Style["b", Italic], " monomials"}]], 10]}, 
+         RGBColor[0.5, 0, 0.5], ImageSize -> Tiny, ControlType -> ColorSlider,
+          ControlPlacement -> Right}, {{$CellContext`b2acolor$$, 
+          RGBColor[1, 1, 0], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^2, 
+              Style["a", Italic], " monomials"}]], 10]}, 
+         RGBColor[1, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{567., {253., 259.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Cubitos[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`y1, 
+           Blank[]], 
+          Pattern[$CellContext`z1, 
+           Blank[]]}, {
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`y2, 
+           Blank[]], 
+          Pattern[$CellContext`z2, 
+           Blank[]]}] := Map[Cuboid, 
+         DeleteDuplicates[
+          Flatten[
+           
+           Table[{$CellContext`j, $CellContext`k, $CellContext`l}, \
+{$CellContext`j, $CellContext`x1, $CellContext`x2 - 
+             1}, {$CellContext`k, $CellContext`y1, $CellContext`y2 - 
+             1}, {$CellContext`l, $CellContext`z1, $CellContext`z2 - 1}], 
+           2]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1914284381],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 5, $CellContext`a2bcolor$$ = RGBColor[
+    1., 0., 0.], $CellContext`a3color$$ = RGBColor[
+    0., 1., 0.], $CellContext`b$$ = 5, $CellContext`b2acolor$$ = RGBColor[
+    0., 0., 1.], $CellContext`b3color$$ = RGBColor[
+    1., 1., 0.], $CellContext`showlabels$$ = False, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 5}, 0, 10, 1}, {{
+       Hold[$CellContext`b$$], 5}, 0, 10, 1}, {{
+       Hold[$CellContext`showlabels$$], False, "show labels"}, {
+      True, False}}, {{
+       Hold[$CellContext`a3color$$], 
+       RGBColor[0., 1., 0.], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 0, 1]}, {{
+       Hold[$CellContext`b3color$$], 
+       RGBColor[1., 1., 0.], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 1, 0]}, {{
+       Hold[$CellContext`a2bcolor$$], 
+       RGBColor[1., 0., 0.], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^2, 
+           Style["b", Italic], " monomials"}]], 10]}, 
+      RGBColor[0.5, 0, 0.5]}, {{
+       Hold[$CellContext`b2acolor$$], 
+       RGBColor[0., 0., 1.], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^2, 
+           Style["a", Italic], " monomials"}]], 10]}, 
+      RGBColor[1, 1, 0]}}, Typeset`size$$ = {360., {186., 190.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`a$123576$$ = 0, $CellContext`b$123577$$ = 
+    0, $CellContext`showlabels$123578$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 5, $CellContext`a2bcolor$$ = 
+        RGBColor[1., 0., 0.], $CellContext`a3color$$ = 
+        RGBColor[0., 1., 0.], $CellContext`b$$ = 5, $CellContext`b2acolor$$ = 
+        RGBColor[0., 0., 1.], $CellContext`b3color$$ = 
+        RGBColor[1., 1., 0.], $CellContext`showlabels$$ = False}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$123576$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$123577$$, 0], 
+        Hold[$CellContext`showlabels$$, $CellContext`showlabels$123578$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.4], 
+         If[$CellContext`showlabels$$, {
+           Text[
+            Style[
+            Style["a", Italic]^3, Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+            Style["b", Italic]^3, Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2}]}], $CellContext`a3color$$, 
+         $CellContext`Cubitos[{0, 0, 
+          0}, {$CellContext`a$$, $CellContext`a$$, $CellContext`a$$}], \
+$CellContext`b3color$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], \
+$CellContext`a2bcolor$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, 0, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, 
+           0}, {$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, 0, $CellContext`a$$}, {$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$}], $CellContext`b2acolor$$, 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, $CellContext`a$$}, {$CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, 
+           0, $CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$}]}, PlotLabel -> Text[
+          Row[{"(", 
+            Style["a", Italic], " + ", 
+            Style["b", Italic], "\!\(\*SuperscriptBox[\()\), \(3\)]\)", " = ",
+             Style["a", Italic]^3, " + ", Style["b", Italic]^3, " + ", 3, 
+            Style["a", Italic]^2, 
+            Style["b", Italic], " + ", 3, Style["b", Italic]^2, 
+            Style["a", Italic]}]], SphericalRegion -> True, Boxed -> False], 
+      "Specifications" :> {{{$CellContext`a$$, 5}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`b$$, 5}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`showlabels$$, False, "show labels"}, {
+         True, False}}, {{$CellContext`a3color$$, 
+          RGBColor[0., 1., 0.], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 0, 1], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`b3color$$, 
+          RGBColor[1., 1., 0.], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`a2bcolor$$, 
+          RGBColor[1., 0., 0.], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^2, 
+              Style["b", Italic], " monomials"}]], 10]}, 
+         RGBColor[0.5, 0, 0.5], ImageSize -> Tiny, ControlType -> ColorSlider,
+          ControlPlacement -> Right}, {{$CellContext`b2acolor$$, 
+          RGBColor[0., 0., 1.], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^2, 
+              Style["a", Italic], " monomials"}]], 10]}, 
+         RGBColor[1, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{567., {253., 259.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Cubitos[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`y1, 
+           Blank[]], 
+          Pattern[$CellContext`z1, 
+           Blank[]]}, {
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`y2, 
+           Blank[]], 
+          Pattern[$CellContext`z2, 
+           Blank[]]}] := Map[Cuboid, 
+         DeleteDuplicates[
+          Flatten[
+           
+           Table[{$CellContext`j, $CellContext`k, $CellContext`l}, \
+{$CellContext`j, $CellContext`x1, $CellContext`x2 - 
+             1}, {$CellContext`k, $CellContext`y1, $CellContext`y2 - 
+             1}, {$CellContext`l, $CellContext`z1, $CellContext`z2 - 1}], 
+           2]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->1925075760],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 10, $CellContext`a2bcolor$$ = 
+    RGBColor[0., 1., 1.], $CellContext`a3color$$ = RGBColor[
+    0.5019607843137255, 0., 0.5019607843137255], $CellContext`b$$ = 
+    4, $CellContext`b2acolor$$ = RGBColor[
+    1., 0.21568627450980393`, 0.21568627450980393`], $CellContext`b3color$$ = 
+    RGBColor[1., 1., 0.], $CellContext`showlabels$$ = True, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], 10}, 0, 10, 1}, {{
+       Hold[$CellContext`b$$], 4}, 0, 10, 1}, {{
+       Hold[$CellContext`showlabels$$], True, "show labels"}, {
+      True, False}}, {{
+       Hold[$CellContext`a3color$$], 
+       RGBColor[0.5019607843137255, 0., 0.5019607843137255], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 0, 1]}, {{
+       Hold[$CellContext`b3color$$], 
+       RGBColor[1., 1., 0.], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+      RGBColor[0, 1, 0]}, {{
+       Hold[$CellContext`a2bcolor$$], 
+       RGBColor[0., 1., 1.], 
+       Style[
+        Text[
+         Row[{Style["a", Italic]^2, 
+           Style["b", Italic], " monomials"}]], 10]}, 
+      RGBColor[0.5, 0, 0.5]}, {{
+       Hold[$CellContext`b2acolor$$], 
+       RGBColor[1., 0.21568627450980393`, 0.21568627450980393`], 
+       Style[
+        Text[
+         Row[{Style["b", Italic]^2, 
+           Style["a", Italic], " monomials"}]], 10]}, 
+      RGBColor[1, 1, 0]}}, Typeset`size$$ = {360., {186., 190.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`a$123650$$ = 0, $CellContext`b$123651$$ = 
+    0, $CellContext`showlabels$123652$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 10, $CellContext`a2bcolor$$ = 
+        RGBColor[0., 1., 1.], $CellContext`a3color$$ = 
+        RGBColor[
+         0.5019607843137255, 0., 0.5019607843137255], $CellContext`b$$ = 
+        4, $CellContext`b2acolor$$ = 
+        RGBColor[
+         1., 0.21568627450980393`, 
+          0.21568627450980393`], $CellContext`b3color$$ = 
+        RGBColor[1., 1., 0.], $CellContext`showlabels$$ = True}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$123650$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$123651$$, 0], 
+        Hold[$CellContext`showlabels$$, $CellContext`showlabels$123652$$, 
+         False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.4], 
+         If[$CellContext`showlabels$$, {
+           Text[
+            Style[
+            Style["a", Italic]^3, Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+            Style["b", Italic]^3, Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/2}], 
+           Text[
+            Style[
+             Row[{Style["a", Italic]^2, 
+               Style["b", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$/2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, Black], {$CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2, $CellContext`a$$ + $CellContext`b$$/2}], 
+           Text[
+            Style[
+             Row[{Style["b", Italic]^2, 
+               Style["a", Italic]}], Large, 
+             Black], {$CellContext`a$$ + $CellContext`b$$/
+              2, $CellContext`a$$ + $CellContext`b$$/2, $CellContext`a$$/
+             2}]}], $CellContext`a3color$$, 
+         $CellContext`Cubitos[{0, 0, 
+          0}, {$CellContext`a$$, $CellContext`a$$, $CellContext`a$$}], \
+$CellContext`b3color$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], \
+$CellContext`a2bcolor$$, 
+         $CellContext`Cubitos[{$CellContext`a$$, 0, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, 
+           0}, {$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$}], 
+         $CellContext`Cubitos[{
+          0, 0, $CellContext`a$$}, {$CellContext`a$$, $CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$}], $CellContext`b2acolor$$, 
+         $CellContext`Cubitos[{
+          0, $CellContext`a$$, $CellContext`a$$}, {$CellContext`a$$, \
+$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, 
+           0, $CellContext`a$$}, {$CellContext`a$$ + $CellContext`b$$, \
+$CellContext`a$$, $CellContext`a$$ + $CellContext`b$$}], 
+         $CellContext`Cubitos[{$CellContext`a$$, $CellContext`a$$, 
+           0}, {$CellContext`a$$ + $CellContext`b$$, $CellContext`a$$ + \
+$CellContext`b$$, $CellContext`a$$}]}, PlotLabel -> Text[
+          Row[{"(", 
+            Style["a", Italic], " + ", 
+            Style["b", Italic], "\!\(\*SuperscriptBox[\()\), \(3\)]\)", " = ",
+             Style["a", Italic]^3, " + ", Style["b", Italic]^3, " + ", 3, 
+            Style["a", Italic]^2, 
+            Style["b", Italic], " + ", 3, Style["b", Italic]^2, 
+            Style["a", Italic]}]], SphericalRegion -> True, Boxed -> False], 
+      "Specifications" :> {{{$CellContext`a$$, 10}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`b$$, 4}, 0, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`showlabels$$, True, "show labels"}, {
+         True, False}}, {{$CellContext`a3color$$, 
+          RGBColor[0.5019607843137255, 0., 0.5019607843137255], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 0, 1], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`b3color$$, 
+          RGBColor[1., 1., 0.], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^3, " monomial"}]], 10]}, 
+         RGBColor[0, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}, {{$CellContext`a2bcolor$$, 
+          RGBColor[0., 1., 1.], 
+          Style[
+           Text[
+            Row[{Style["a", Italic]^2, 
+              Style["b", Italic], " monomials"}]], 10]}, 
+         RGBColor[0.5, 0, 0.5], ImageSize -> Tiny, ControlType -> ColorSlider,
+          ControlPlacement -> Right}, {{$CellContext`b2acolor$$, 
+          RGBColor[1., 0.21568627450980393`, 0.21568627450980393`], 
+          Style[
+           Text[
+            Row[{Style["b", Italic]^2, 
+              Style["a", Italic], " monomials"}]], 10]}, 
+         RGBColor[1, 1, 0], ImageSize -> Tiny, ControlType -> ColorSlider, 
+         ControlPlacement -> Right}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{567., {253., 259.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Cubitos[{
+          Pattern[$CellContext`x1, 
+           Blank[]], 
+          Pattern[$CellContext`y1, 
+           Blank[]], 
+          Pattern[$CellContext`z1, 
+           Blank[]]}, {
+          Pattern[$CellContext`x2, 
+           Blank[]], 
+          Pattern[$CellContext`y2, 
+           Blank[]], 
+          Pattern[$CellContext`z2, 
+           Blank[]]}] := Map[Cuboid, 
+         DeleteDuplicates[
+          Flatten[
+           
+           Table[{$CellContext`j, $CellContext`k, $CellContext`l}, \
+{$CellContext`j, $CellContext`x1, $CellContext`x2 - 
+             1}, {$CellContext`k, $CellContext`y1, $CellContext`y2 - 
+             1}, {$CellContext`l, $CellContext`z1, $CellContext`z2 - 1}], 
+           2]]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->759672618]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.532955049569046*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.532880447838886*^9},
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.5329550474705153`*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9, 
+  3.532955045644388*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.532955043876429*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell["", "SearchTermsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Difference of Cubes",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/DifferenceOfCubes/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/DifferenceOfCubes/"]], "RelatedLinks",
+ CellID->1938608215]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Sayra Guti\[EAcute]rrez",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Sayra+Guti%\
+E9rrez"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Sayra+Guti%E9rrez"]
+}], "Author",
+ CellChangeTimes->{{3.532881467504289*^9, 3.5328814720518484`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, Automatic},
+WindowMargins->{{10, Automatic}, {0, 0}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[65382, 1538, 353, 9, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[65738, 1549, 719, 17, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[66460, 1568, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[66803, 1581, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[67443, 1598, 887, 22, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[68333, 1622, 393, 10, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[68729, 1634, 1505, 32, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[70237, 1668, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 72390, 1738},
+ {"RotateAndZoomIn3D", 72499, 1741},
+ {"DragLocators", 72609, 1744},
+ {"CreateAndDeleteLocators", 72725, 1747},
+ {"SliderZoom", 72839, 1750},
+ {"GamepadControls", 72945, 1753},
+ {"AutomaticAnimation", 73059, 1756},
+ {"BookmarkAnimation", 73176, 1759}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 100, 1, 74, "DemoTitle"],
+Cell[682, 25, 33, 0, 261, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[740, 29, 29, 0, 189, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[794, 33, 17355, 426, 901, "Input",
+ CellID->121727309],
+Cell[18152, 461, 9102, 203, 524, "Output",
+ CellID->1663935421]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27303, 670, 36, 0, 171, "ManipulateCaptionSection"],
+Cell[27342, 672, 912, 22, 66, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28291, 699, 28, 0, 173, "ThumbnailSection"],
+Cell[28322, 701, 9110, 203, 524, "Output",
+ CellID->1230569513]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37469, 909, 28, 0, 143, "SnapshotsSection"],
+Cell[37500, 911, 9186, 203, 524, "Output",
+ CellID->1914284381],
+Cell[46689, 1116, 9134, 203, 524, "Output",
+ CellID->1925075760],
+Cell[55826, 1321, 9450, 208, 524, "Output",
+ CellID->759672618]
+}, Open  ]],
+Cell[65291, 1532, 26, 0, 337, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[65342, 1536, 37, 0, 115, "ControlSuggestionsSection"],
+Cell[65382, 1538, 353, 9, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[65738, 1549, 719, 17, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[66460, 1568, 340, 11, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[66803, 1581, 637, 15, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[67443, 1598, 887, 22, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[68333, 1622, 393, 10, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[68729, 1634, 1505, 32, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[70237, 1668, 908, 21, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[71160, 1692, 30, 0, 155, "SearchTermsSection"],
+Cell[CellGroupData[{
+Cell[71215, 1696, 31, 0, 129, "RelatedLinksSection"],
+Cell[71249, 1698, 268, 6, 21, "RelatedLinks",
+ CellID->1938608215]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71554, 1709, 25, 0, 141, "AuthorSection"],
+Cell[71582, 1711, 382, 10, 22, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

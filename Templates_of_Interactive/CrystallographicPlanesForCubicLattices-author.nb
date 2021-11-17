@@ -1,0 +1,1086 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     43447,       1077]
+NotebookOptionsPosition[     39600,        957]
+NotebookOutlinePosition[     41186,       1007]
+CellTagsIndexPosition[     40866,        995]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Crystallographic Planes for Cubic Lattices\
+\>", "DemoTitle",
+ CellChangeTimes->{{3.573312607483524*^9, 3.5733126153979764`*^9}, {
+  3.573601097068017*^9, 3.573601107632638*^9}}],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", " ", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Show", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"LatticeData", "[", " ", 
+      RowBox[{
+       RowBox[{"Which", "[", 
+        RowBox[{
+         RowBox[{"Type", "\[Equal]", "\"\<FCC\>\""}], ",", 
+         "\"\<FaceCenteredCubic\>\"", ",", " ", 
+         RowBox[{"Type", " ", "\[Equal]", " ", "\"\<BCC\>\""}], ",", " ", 
+         "\"\<BodyCenteredCubic\>\"", ",", " ", 
+         RowBox[{"Type", " ", "==", " ", "\"\<SC\>\""}], ",", " ", 
+         "\"\<SimpleCubic\>\""}], "]"}], ",", "\"\<Image\>\""}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Table", "[", " ", 
+      RowBox[{
+       RowBox[{"ContourPlot3D", "[", "  ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"h", "*", "x"}], "+", 
+           RowBox[{"k", "*", "y"}], "+", 
+           RowBox[{"l", "*", "z"}], "-", "r"}], "\[Equal]", "0"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", 
+           RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", 
+           RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+         RowBox[{"ColorFunction", " ", "\[Rule]", " ", 
+          RowBox[{"Function", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"x", ",", "y", ",", "z", ",", "f"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"Blue", ",", 
+              RowBox[{"Opacity", "[", "Op", "]"}]}], "}"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Mesh", " ", "\[Rule]", " ", "False"}], ",", " ", 
+         RowBox[{"BoundaryStyle", " ", "\[Rule]", " ", "Black"}]}], "]"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", 
+         RowBox[{"-", 
+          RowBox[{"(", 
+           RowBox[{"h", "+", "k", "+", "l"}], ")"}]}], ",", 
+         RowBox[{"h", "+", "k", "+", "l", "-", "2"}], ",", "2"}], "}"}]}], 
+      "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Graphics3D", "[", 
+      RowBox[{"{", 
+       RowBox[{"Thick", ",", "\[IndentingNewLine]", " ", "Red", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1.6", ",", 
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}]}], "}"}]}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", "Blue", ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.01"}], ",", "1.6", ",", 
+             RowBox[{"-", "1.01"}]}], "}"}]}], "}"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Darker", "@", "Green"}], ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.01"}], ",", 
+             RowBox[{"-", "1.01"}], ",", "1.6"}], "}"}]}], "}"}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"SphericalRegion", "\[Rule]", " ", "True"}], ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"1.1", " ", 
+       RowBox[{"{", 
+        RowBox[{"500", ",", "400"}], "}"}]}]}]}], "\[IndentingNewLine]", 
+    "]"}], ",", "\[IndentingNewLine]", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Type", ",", " ", "\"\<SC\>\"", ",", "\"\<lattice\>\""}], "}"}],
+      ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<SC\>\"", ",", " ", "\"\<BCC\>\"", ",", " ", "\"\<FCC\>\""}], 
+      "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Miller indices\>\"", ",", 
+      RowBox[{"Spacer", "[", "20", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"h", ",", "1", ",", " ", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<h\>\"", ",", "Italic"}], "]"}]}], "}"}], ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "10", ",", "1"}], "]"}]}], "}"}], "]"}], ",", 
+      RowBox[{"Spacer", "[", "20", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"k", ",", "1", ",", " ", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<k\>\"", ",", "Italic"}], "]"}]}], "}"}], ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "10", ",", "1"}], "]"}]}], "}"}], "]"}], ",", 
+      RowBox[{"Spacer", "[", "20", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"l", ",", "1", ",", " ", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<l\>\"", ",", "Italic"}], "]"}]}], "}"}], ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"0", ",", "10", ",", "1"}], "]"}]}], "}"}], "]"}]}], "}"}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Op", ",", "0.5", ",", "\"\<plane opacity\>\""}], "}"}], ",", 
+     "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.5733118319971685`*^9, {3.5735634729657393`*^9, 3.57356365795232*^9}, {
+   3.5735637842485437`*^9, 3.573563826589966*^9}, {3.573581256277411*^9, 
+   3.573581543912533*^9}, {3.573581632137226*^9, 3.573581664815187*^9}, {
+   3.573581697584152*^9, 3.57358183419499*^9}, {3.573581865567799*^9, 
+   3.5735818904638643`*^9}, {3.5735819270856524`*^9, 3.573581992345447*^9}, {
+   3.5738601757351437`*^9, 3.57386018179449*^9}, {3.5738603344192195`*^9, 
+   3.5738604031441507`*^9}, {3.5738604513859096`*^9, 
+   3.5738604810426064`*^9}, {3.5738605500645537`*^9, 
+   3.5738605711817617`*^9}, {3.5738606229297214`*^9, 
+   3.5738606396496773`*^9}, {3.573860686732371*^9, 3.5738607609136133`*^9}, 
+   3.5738611550281553`*^9, {3.573861196154508*^9, 3.573861210731342*^9}, 
+   3.5738612644944167`*^9, {3.5740138336328964`*^9, 3.574013843386921*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 1, $CellContext`k$$ = 
+    1, $CellContext`l$$ = 1, $CellContext`Op$$ = 0.5, $CellContext`Type$$ = 
+    "SC", Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Type$$], "SC", "lattice"}, {"SC", "BCC", "FCC"}}, {{
+       Hold[$CellContext`h$$], 1, 
+       Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`k$$], 1, 
+       Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`l$$], 1, 
+       Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+      Hold[
+       Row[{"Miller indices", 
+         Spacer[20], 
+         Manipulate`Place[1], 
+         Spacer[20], 
+         Manipulate`Place[2], 
+         Spacer[20], 
+         Manipulate`Place[3]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`Op$$], 0.5, "plane opacity"}, 0, 1}}, 
+    Typeset`size$$ = {550., {218., 222.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Type$922$$ = 0, $CellContext`h$923$$ = 
+    0, $CellContext`k$924$$ = 0, $CellContext`l$925$$ = 
+    0, $CellContext`Op$926$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 1, $CellContext`k$$ = 
+        1, $CellContext`l$$ = 1, $CellContext`Op$$ = 0.5, $CellContext`Type$$ = 
+        "SC"}, "ControllerVariables" :> {
+        Hold[$CellContext`Type$$, $CellContext`Type$922$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$923$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$924$$, 0], 
+        Hold[$CellContext`l$$, $CellContext`l$925$$, 0], 
+        Hold[$CellContext`Op$$, $CellContext`Op$926$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LatticeData[
+         Which[$CellContext`Type$$ == "FCC", 
+          "FaceCenteredCubic", $CellContext`Type$$ == "BCC", 
+          "BodyCenteredCubic", $CellContext`Type$$ == "SC", "SimpleCubic"], 
+         "Image"], 
+        Table[
+         ContourPlot3D[$CellContext`h$$ $CellContext`x + $CellContext`k$$ \
+$CellContext`y + $CellContext`l$$ $CellContext`z - $CellContext`r == 
+          0, {$CellContext`x, -1, 1}, {$CellContext`y, -1, 
+           1}, {$CellContext`z, -1, 1}, ColorFunction -> 
+          Function[{$CellContext`x$, $CellContext`y$, $CellContext`z$, \
+$CellContext`f$}, {Blue, 
+             Opacity[$CellContext`Op$$]}], Mesh -> False, BoundaryStyle -> 
+          Black], {$CellContext`r, -($CellContext`h$$ + $CellContext`k$$ + \
+$CellContext`l$$), $CellContext`h$$ + $CellContext`k$$ + $CellContext`l$$ - 2,
+           2}], 
+        Graphics3D[{Thick, Red, 
+          Arrow[{{-1.01, -1.01, -1.01}, {1.6, -1.01, -1.01}}], Blue, 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, 1.6, -1.01}}], 
+          Darker[Green], 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, -1.01, 1.6}}]}], 
+        SphericalRegion -> True, ImageSize -> 1.1 {500, 400}], 
+      "Specifications" :> {{{$CellContext`Type$$, "SC", "lattice"}, {
+         "SC", "BCC", "FCC"}}, {{$CellContext`h$$, 1, 
+          Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 1}, {{$CellContext`k$$, 1, 
+          Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 2}, {{$CellContext`l$$, 1, 
+          Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 3}, 
+        Row[{"Miller indices", 
+          Spacer[20], 
+          Manipulate`Place[1], 
+          Spacer[20], 
+          Manipulate`Place[2], 
+          Spacer[20], 
+          Manipulate`Place[3]}], {{$CellContext`Op$$, 0.5, "plane opacity"}, 
+         0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{599., {291., 296.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->325019230]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "Within a crystal lattice with basis vectors ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["a", "1"], ",", " ", 
+     SubscriptBox["a", "2"], ",", " ", 
+     SubscriptBox["a", "3"]}], ")"}], TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ ", select three Miller indices ",
+ Cell[BoxData[
+  FormBox["h", TraditionalForm]], "InlineMath"],
+ ", ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]], "InlineMath"],
+ ", and ",
+ Cell[BoxData[
+  FormBox["l", TraditionalForm]], "InlineMath"],
+ " to get a set of parallel planes going through all points of the lattice. \
+The notation ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"h", " ", "k", " ", "l"}], TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ " indicates the direction ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"h", " ", 
+     SubscriptBox["a", "1"]}], "+", 
+    RowBox[{"k", " ", 
+     SubscriptBox["a", "2"]}], "+", 
+    RowBox[{"l", " ", 
+     SubscriptBox["a", "3"]}]}], TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ ". In a cubic lattice, this direction is a normal vector."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.5740134172487087`*^9, {3.5740134517461576`*^9, 3.5740134531372967`*^9}, {
+   3.574013496003583*^9, 3.5740138092133384`*^9}},
+ CellID->71584784]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 1, $CellContext`k$$ = 
+    2, $CellContext`l$$ = 1, $CellContext`Op$$ = 0.5, $CellContext`Type$$ = 
+    "SC", Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Type$$], "SC", "lattice"}, {"SC", "BCC", "FCC"}}, {{
+       Hold[$CellContext`h$$], 1, 
+       Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`k$$], 2, 
+       Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`l$$], 1, 
+       Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+      Hold[
+       Row[{"Miller indices", 
+         Spacer[20], 
+         Manipulate`Place[1], 
+         Spacer[20], 
+         Manipulate`Place[2], 
+         Spacer[20], 
+         Manipulate`Place[3]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`Op$$], 0.5, "plane opacity"}, 0, 1}}, 
+    Typeset`size$$ = {550., {218., 222.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`Type$998$$ = 0, $CellContext`h$999$$ = 
+    0, $CellContext`k$1000$$ = 0, $CellContext`l$1001$$ = 
+    0, $CellContext`Op$1002$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 1, $CellContext`k$$ = 
+        2, $CellContext`l$$ = 1, $CellContext`Op$$ = 0.5, $CellContext`Type$$ = 
+        "SC"}, "ControllerVariables" :> {
+        Hold[$CellContext`Type$$, $CellContext`Type$998$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$999$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$1000$$, 0], 
+        Hold[$CellContext`l$$, $CellContext`l$1001$$, 0], 
+        Hold[$CellContext`Op$$, $CellContext`Op$1002$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LatticeData[
+         Which[$CellContext`Type$$ == "FCC", 
+          "FaceCenteredCubic", $CellContext`Type$$ == "BCC", 
+          "BodyCenteredCubic", $CellContext`Type$$ == "SC", "SimpleCubic"], 
+         "Image"], 
+        Table[
+         ContourPlot3D[$CellContext`h$$ $CellContext`x + $CellContext`k$$ \
+$CellContext`y + $CellContext`l$$ $CellContext`z - $CellContext`r == 
+          0, {$CellContext`x, -1, 1}, {$CellContext`y, -1, 
+           1}, {$CellContext`z, -1, 1}, ColorFunction -> 
+          Function[{$CellContext`x$, $CellContext`y$, $CellContext`z$, \
+$CellContext`f$}, {Blue, 
+             Opacity[$CellContext`Op$$]}], Mesh -> False, BoundaryStyle -> 
+          Black], {$CellContext`r, -($CellContext`h$$ + $CellContext`k$$ + \
+$CellContext`l$$), $CellContext`h$$ + $CellContext`k$$ + $CellContext`l$$ - 2,
+           2}], 
+        Graphics3D[{Thick, Red, 
+          Arrow[{{-1.01, -1.01, -1.01}, {1.6, -1.01, -1.01}}], Blue, 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, 1.6, -1.01}}], 
+          Darker[Green], 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, -1.01, 1.6}}]}], 
+        SphericalRegion -> True, ImageSize -> 1.1 {500, 400}], 
+      "Specifications" :> {{{$CellContext`Type$$, "SC", "lattice"}, {
+         "SC", "BCC", "FCC"}}, {{$CellContext`h$$, 1, 
+          Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 1}, {{$CellContext`k$$, 2, 
+          Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 2}, {{$CellContext`l$$, 1, 
+          Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 3}, 
+        Row[{"Miller indices", 
+          Spacer[20], 
+          Manipulate`Place[1], 
+          Spacer[20], 
+          Manipulate`Place[2], 
+          Spacer[20], 
+          Manipulate`Place[3]}], {{$CellContext`Op$$, 0.5, "plane opacity"}, 
+         0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{599., {291., 296.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->122340262]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 1, $CellContext`k$$ = 
+    2, $CellContext`l$$ = 1, $CellContext`Op$$ = 1., $CellContext`Type$$ = 
+    "SC", Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Type$$], "SC", "lattice"}, {"SC", "BCC", "FCC"}}, {{
+       Hold[$CellContext`h$$], 1, 
+       Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`k$$], 2, 
+       Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`l$$], 1, 
+       Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+      Hold[
+       Row[{"Miller indices", 
+         Spacer[20], 
+         Manipulate`Place[1], 
+         Spacer[20], 
+         Manipulate`Place[2], 
+         Spacer[20], 
+         Manipulate`Place[3]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`Op$$], 1., "plane opacity"}, 0, 1}}, Typeset`size$$ =
+     Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Type$1074$$ = 
+    0, $CellContext`h$1075$$ = 0, $CellContext`k$1076$$ = 
+    0, $CellContext`l$1077$$ = 0, $CellContext`Op$1078$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 1, $CellContext`k$$ = 
+        2, $CellContext`l$$ = 1, $CellContext`Op$$ = 1., $CellContext`Type$$ = 
+        "SC"}, "ControllerVariables" :> {
+        Hold[$CellContext`Type$$, $CellContext`Type$1074$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$1075$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$1076$$, 0], 
+        Hold[$CellContext`l$$, $CellContext`l$1077$$, 0], 
+        Hold[$CellContext`Op$$, $CellContext`Op$1078$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LatticeData[
+         Which[$CellContext`Type$$ == "FCC", 
+          "FaceCenteredCubic", $CellContext`Type$$ == "BCC", 
+          "BodyCenteredCubic", $CellContext`Type$$ == "SC", "SimpleCubic"], 
+         "Image"], 
+        Table[
+         ContourPlot3D[$CellContext`h$$ $CellContext`x + $CellContext`k$$ \
+$CellContext`y + $CellContext`l$$ $CellContext`z - $CellContext`r == 
+          0, {$CellContext`x, -1, 1}, {$CellContext`y, -1, 
+           1}, {$CellContext`z, -1, 1}, ColorFunction -> 
+          Function[{$CellContext`x$, $CellContext`y$, $CellContext`z$, \
+$CellContext`f$}, {Blue, 
+             Opacity[$CellContext`Op$$]}], Mesh -> False, BoundaryStyle -> 
+          Black], {$CellContext`r, -($CellContext`h$$ + $CellContext`k$$ + \
+$CellContext`l$$), $CellContext`h$$ + $CellContext`k$$ + $CellContext`l$$ - 2,
+           2}], 
+        Graphics3D[{Thick, Red, 
+          Arrow[{{-1.01, -1.01, -1.01}, {1.6, -1.01, -1.01}}], Blue, 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, 1.6, -1.01}}], 
+          Darker[Green], 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, -1.01, 1.6}}]}], 
+        SphericalRegion -> True, ImageSize -> 1.1 {500, 400}], 
+      "Specifications" :> {{{$CellContext`Type$$, "SC", "lattice"}, {
+         "SC", "BCC", "FCC"}}, {{$CellContext`h$$, 1, 
+          Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 1}, {{$CellContext`k$$, 2, 
+          Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 2}, {{$CellContext`l$$, 1, 
+          Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 3}, 
+        Row[{"Miller indices", 
+          Spacer[20], 
+          Manipulate`Place[1], 
+          Spacer[20], 
+          Manipulate`Place[2], 
+          Spacer[20], 
+          Manipulate`Place[3]}], {{$CellContext`Op$$, 1., "plane opacity"}, 0,
+          1}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->20787113],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 0, $CellContext`k$$ = 
+    3, $CellContext`l$$ = 1, $CellContext`Op$$ = 0.676, $CellContext`Type$$ = 
+    "SC", Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Type$$], "SC", "lattice"}, {"SC", "BCC", "FCC"}}, {{
+       Hold[$CellContext`h$$], 0, 
+       Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`k$$], 3, 
+       Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`l$$], 1, 
+       Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+      Hold[
+       Row[{"Miller indices", 
+         Spacer[20], 
+         Manipulate`Place[1], 
+         Spacer[20], 
+         Manipulate`Place[2], 
+         Spacer[20], 
+         Manipulate`Place[3]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`Op$$], 0.676, "plane opacity"}, 0, 1}}, 
+    Typeset`size$$ = Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Type$1150$$ = 
+    0, $CellContext`h$1151$$ = 0, $CellContext`k$1152$$ = 
+    0, $CellContext`l$1153$$ = 0, $CellContext`Op$1154$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0, $CellContext`k$$ = 
+        3, $CellContext`l$$ = 1, $CellContext`Op$$ = 
+        0.676, $CellContext`Type$$ = "SC"}, "ControllerVariables" :> {
+        Hold[$CellContext`Type$$, $CellContext`Type$1150$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$1151$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$1152$$, 0], 
+        Hold[$CellContext`l$$, $CellContext`l$1153$$, 0], 
+        Hold[$CellContext`Op$$, $CellContext`Op$1154$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LatticeData[
+         Which[$CellContext`Type$$ == "FCC", 
+          "FaceCenteredCubic", $CellContext`Type$$ == "BCC", 
+          "BodyCenteredCubic", $CellContext`Type$$ == "SC", "SimpleCubic"], 
+         "Image"], 
+        Table[
+         ContourPlot3D[$CellContext`h$$ $CellContext`x + $CellContext`k$$ \
+$CellContext`y + $CellContext`l$$ $CellContext`z - $CellContext`r == 
+          0, {$CellContext`x, -1, 1}, {$CellContext`y, -1, 
+           1}, {$CellContext`z, -1, 1}, ColorFunction -> 
+          Function[{$CellContext`x$, $CellContext`y$, $CellContext`z$, \
+$CellContext`f$}, {Blue, 
+             Opacity[$CellContext`Op$$]}], Mesh -> False, BoundaryStyle -> 
+          Black], {$CellContext`r, -($CellContext`h$$ + $CellContext`k$$ + \
+$CellContext`l$$), $CellContext`h$$ + $CellContext`k$$ + $CellContext`l$$ - 2,
+           2}], 
+        Graphics3D[{Thick, Red, 
+          Arrow[{{-1.01, -1.01, -1.01}, {1.6, -1.01, -1.01}}], Blue, 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, 1.6, -1.01}}], 
+          Darker[Green], 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, -1.01, 1.6}}]}], 
+        SphericalRegion -> True, ImageSize -> 1.1 {500, 400}], 
+      "Specifications" :> {{{$CellContext`Type$$, "SC", "lattice"}, {
+         "SC", "BCC", "FCC"}}, {{$CellContext`h$$, 0, 
+          Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 1}, {{$CellContext`k$$, 3, 
+          Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 2}, {{$CellContext`l$$, 1, 
+          Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 3}, 
+        Row[{"Miller indices", 
+          Spacer[20], 
+          Manipulate`Place[1], 
+          Spacer[20], 
+          Manipulate`Place[2], 
+          Spacer[20], 
+          Manipulate`Place[3]}], {{$CellContext`Op$$, 0.676, "plane opacity"},
+          0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->241561749],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 2, $CellContext`k$$ = 
+    6, $CellContext`l$$ = 4, $CellContext`Op$$ = 0.746, $CellContext`Type$$ = 
+    "SC", Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`Type$$], "SC", "lattice"}, {"SC", "BCC", "FCC"}}, {{
+       Hold[$CellContext`h$$], 2, 
+       Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`k$$], 6, 
+       Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {{
+       Hold[$CellContext`l$$], 4, 
+       Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}, {
+      Hold[
+       Row[{"Miller indices", 
+         Spacer[20], 
+         Manipulate`Place[1], 
+         Spacer[20], 
+         Manipulate`Place[2], 
+         Spacer[20], 
+         Manipulate`Place[3]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`Op$$], 0.746, "plane opacity"}, 0, 1}}, 
+    Typeset`size$$ = Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`Type$1226$$ = 
+    0, $CellContext`h$1227$$ = 0, $CellContext`k$1228$$ = 
+    0, $CellContext`l$1229$$ = 0, $CellContext`Op$1230$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 2, $CellContext`k$$ = 
+        6, $CellContext`l$$ = 4, $CellContext`Op$$ = 
+        0.746, $CellContext`Type$$ = "SC"}, "ControllerVariables" :> {
+        Hold[$CellContext`Type$$, $CellContext`Type$1226$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$1227$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$1228$$, 0], 
+        Hold[$CellContext`l$$, $CellContext`l$1229$$, 0], 
+        Hold[$CellContext`Op$$, $CellContext`Op$1230$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        LatticeData[
+         Which[$CellContext`Type$$ == "FCC", 
+          "FaceCenteredCubic", $CellContext`Type$$ == "BCC", 
+          "BodyCenteredCubic", $CellContext`Type$$ == "SC", "SimpleCubic"], 
+         "Image"], 
+        Table[
+         ContourPlot3D[$CellContext`h$$ $CellContext`x + $CellContext`k$$ \
+$CellContext`y + $CellContext`l$$ $CellContext`z - $CellContext`r == 
+          0, {$CellContext`x, -1, 1}, {$CellContext`y, -1, 
+           1}, {$CellContext`z, -1, 1}, ColorFunction -> 
+          Function[{$CellContext`x$, $CellContext`y$, $CellContext`z$, \
+$CellContext`f$}, {Blue, 
+             Opacity[$CellContext`Op$$]}], Mesh -> False, BoundaryStyle -> 
+          Black], {$CellContext`r, -($CellContext`h$$ + $CellContext`k$$ + \
+$CellContext`l$$), $CellContext`h$$ + $CellContext`k$$ + $CellContext`l$$ - 2,
+           2}], 
+        Graphics3D[{Thick, Red, 
+          Arrow[{{-1.01, -1.01, -1.01}, {1.6, -1.01, -1.01}}], Blue, 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, 1.6, -1.01}}], 
+          Darker[Green], 
+          Arrow[{{-1.01, -1.01, -1.01}, {-1.01, -1.01, 1.6}}]}], 
+        SphericalRegion -> True, ImageSize -> 1.1 {500, 400}], 
+      "Specifications" :> {{{$CellContext`Type$$, "SC", "lattice"}, {
+         "SC", "BCC", "FCC"}}, {{$CellContext`h$$, 2, 
+          Style["h", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 1}, {{$CellContext`k$$, 6, 
+          Style["k", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 2}, {{$CellContext`l$$, 4, 
+          Style["l", Italic]}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 
+         ControlPlacement -> 3}, 
+        Row[{"Miller indices", 
+          Spacer[20], 
+          Manipulate`Place[1], 
+          Spacer[20], 
+          Manipulate`Place[2], 
+          Spacer[20], 
+          Manipulate`Place[3]}], {{$CellContext`Op$$, 0.746, "plane opacity"},
+          0, 1}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->26684322]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.5735641845414395`*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.5735641888776875`*^9},
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["Miller Indices", "SearchTerms",
+ CellChangeTimes->{{3.573312049803626*^9, 3.573312055221936*^9}},
+ CellID->158238019],
+
+Cell["Planes", "SearchTerms",
+ CellChangeTimes->{{3.573312059619188*^9, 3.573312060689249*^9}},
+ CellID->192389940],
+
+Cell["Unit Cells", "SearchTerms",
+ CellChangeTimes->{{3.5733120642634535`*^9, 3.5733120662755685`*^9}},
+ CellID->326418629]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Miller Indices for a Simple Cubic Lattice",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/MillerIndicesForASimpleCubicLattice/\
+"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/MillerIndicesForASimpleCubicLattice/"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.573564242179736*^9, 3.573564242179736*^9}},
+ CellID->148771515],
+
+Cell[TextData[ButtonBox["X-Ray Reflection by Planes of Atoms in a Cubic \
+Lattice",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/\
+XRayReflectionByPlanesOfAtomsInACubicLattice/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/\
+XRayReflectionByPlanesOfAtomsInACubicLattice/"]], "RelatedLinks",
+ CellChangeTimes->{{3.5735642664351234`*^9, 3.573564266436124*^9}},
+ CellID->169112590]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Danyel Cavazos",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Danyel+Cavazos"]\
+, None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Danyel+Cavazos"],
+ " "
+}], "Author",
+ CellChangeTimes->{{3.573312073966008*^9, 3.5733120821004734`*^9}, {
+  3.573581913794256*^9, 3.573581913798394*^9}}],
+
+Cell["(ITESM)", "Author",
+ CellChangeTimes->{{3.573312073966008*^9, 3.5733120821004734`*^9}, 
+   3.573581913794256*^9},
+ CellID->160907687]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{974, 706},
+WindowMargins->{{175, Automatic}, {Automatic, 24}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "AutomaticAnimation"->{
+  Cell[35232, 830, 1464, 31, 22, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[36699, 863, 908, 21, 22, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]},
+ "CreateAndDeleteLocators"->{
+  Cell[33373, 779, 637, 15, 22, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "DragLocators"->{
+  Cell[33030, 766, 340, 11, 22, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "GamepadControls"->{
+  Cell[34860, 819, 369, 9, 22, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "ResizeImages"->{
+  Cell[31948, 736, 355, 9, 22, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[32306, 747, 721, 17, 22, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "SliderZoom"->{
+  Cell[34013, 796, 844, 21, 22, "ControlSuggestions",
+   CellTags->"SliderZoom"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"AutomaticAnimation", 39981, 968},
+ {"BookmarkAnimation", 40097, 971},
+ {"CreateAndDeleteLocators", 40217, 974},
+ {"DragLocators", 40332, 977},
+ {"GamepadControls", 40439, 980},
+ {"ResizeImages", 40545, 983},
+ {"RotateAndZoomIn3D", 40653, 986},
+ {"SliderZoom", 40760, 989}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 188, 4, 74, "DemoTitle"],
+Cell[770, 28, 33, 0, 287, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[828, 32, 29, 0, 194, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[882, 36, 6747, 163, 448, "Input"],
+Cell[7632, 201, 4555, 93, 599, "Output",
+ CellID->325019230]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12233, 300, 36, 0, 169, "ManipulateCaptionSection"],
+Cell[12272, 302, 1339, 41, 39, "ManipulateCaption",
+ CellID->71584784]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13648, 348, 28, 0, 173, "ThumbnailSection"],
+Cell[13679, 350, 4561, 93, 599, "Output",
+ CellID->122340262]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18277, 448, 28, 0, 143, "SnapshotsSection"],
+Cell[18308, 450, 4501, 91, 37, "Output",
+ CellID->20787113],
+Cell[22812, 543, 4514, 91, 37, "Output",
+ CellID->241561749],
+Cell[27329, 636, 4513, 91, 37, "Output",
+ CellID->26684322]
+}, Open  ]],
+Cell[31857, 730, 26, 0, 336, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[31908, 734, 37, 0, 114, "ControlSuggestionsSection"],
+Cell[31948, 736, 355, 9, 22, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[32306, 747, 721, 17, 22, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[33030, 766, 340, 11, 22, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[33373, 779, 637, 15, 22, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[34013, 796, 844, 21, 22, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[34860, 819, 369, 9, 22, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[35232, 830, 1464, 31, 22, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[36699, 863, 908, 21, 22, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37644, 889, 30, 0, 155, "SearchTermsSection"],
+Cell[37677, 891, 123, 2, 22, "SearchTerms",
+ CellID->158238019],
+Cell[37803, 895, 115, 2, 22, "SearchTerms",
+ CellID->192389940],
+Cell[37921, 899, 123, 2, 22, "SearchTerms",
+ CellID->326418629]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38081, 906, 31, 0, 141, "RelatedLinksSection"],
+Cell[38115, 908, 395, 9, 22, "RelatedLinks",
+ CellID->148771515],
+Cell[38513, 919, 430, 10, 22, "RelatedLinks",
+ CellID->169112590]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38980, 934, 25, 0, 141, "AuthorSection"],
+Cell[39008, 936, 422, 12, 22, "Author"],
+Cell[39433, 950, 139, 3, 22, "Author",
+ CellID->160907687]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

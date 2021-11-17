@@ -1,0 +1,748 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     28632,        739]
+NotebookOptionsPosition[     25026,        628]
+NotebookOutlinePosition[     26608,        678]
+CellTagsIndexPosition[     26288,        666]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Cube of Cubes", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.35735315666785*^9, 3.35735315837094*^9}},
+ CellID->700863240],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Opacity", "[", 
+        RowBox[{"1", "-", "o"}], "]"}], ",", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Cuboid", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"x", ",", "y", ",", "z"}], "}"}], "+", "sz"}]}], "]"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "n"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"y", ",", "n"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"z", ",", "n"}], "}"}]}], "]"}]}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"500", ",", "360"}], "}"}]}], ",", 
+     RowBox[{"SphericalRegion", "\[Rule]", "True"}], ",", 
+     RowBox[{"ImageMargins", "\[Rule]", "10"}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"Text", "@", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"n", ",", "\"\< cubes per side   |   \>\"", ",", 
+            RowBox[{"n", "^", "3"}], ",", "\"\< total cubes\>\"", ",", 
+            RowBox[{"Spacer", "[", "14", "]"}]}], "}"}], "]"}], ",", "14", 
+         ",", " ", "\"\<Label\>\""}], "]"}]}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "3", ",", "\"\<cubes along each side\>\""}], "}"}], 
+     ",", "1", ",", "10", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"sz", ",", ".8", ",", "\"\<size of each cube\>\""}], "}"}], ",",
+      "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"o", ",", "0", ",", "\"\<transparency\>\""}], "}"}], ",", "0", 
+     ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.34972828085182*^9, 3.3497283201414*^9}, {
+  3.34972836794502*^9, 3.34972846559877*^9}, {3.34972863812992*^9, 
+  3.34972873937279*^9}, {3.34972878560391*^9, 3.34972883263346*^9}, {
+  3.35735309443467*^9, 3.357353129059*^9}, {3.35735333979121*^9, 
+  3.35735339855646*^9}, {3.35735423735273*^9, 3.35735424311836*^9}, {
+  3.35851771435238*^9, 3.35851773283897*^9}, {3.36371493624283*^9, 
+  3.36371495970959*^9}, {3.36371499605468*^9, 3.3637150236138*^9}, {
+  3.3637172453375*^9, 3.363717250877*^9}, {3.36371731140359*^9, 
+  3.36371732363161*^9}, {3.36516657836686*^9, 3.36516658897778*^9}, {
+  3.36518059014069*^9, 3.36518066925291*^9}, {3.36518075913869*^9, 
+  3.3651808341232*^9}, {3.36518087520842*^9, 3.36518093118218*^9}, {
+  3.36518098714277*^9, 3.36518107700064*^9}, {3.36518122687088*^9, 
+  3.36518125296094*^9}, {3.36956616087904*^9, 3.36956616605075*^9}},
+ CellID->284180372],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 3, $CellContext`o$$ = 
+    0, $CellContext`sz$$ = 0.8, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 3, "cubes along each side"}, 1, 10, 1}, {{
+       Hold[$CellContext`sz$$], 0.8, "size of each cube"}, 0, 1}, {{
+       Hold[$CellContext`o$$], 0, "transparency"}, 0, 1}}, Typeset`size$$ = {
+    520., 380.}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$232$$ = 
+    0, $CellContext`sz$233$$ = 0, $CellContext`o$234$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 3, $CellContext`o$$ = 
+        0, $CellContext`sz$$ = 0.8}, "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$232$$, 0], 
+        Hold[$CellContext`sz$$, $CellContext`sz$233$$, 0], 
+        Hold[$CellContext`o$$, $CellContext`o$234$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[1 - $CellContext`o$$], 
+         Table[
+          
+          Cuboid[{$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`x, $CellContext`y, $CellContext`z} + $CellContext`sz$$], \
+{$CellContext`x, $CellContext`n$$}, {$CellContext`y, $CellContext`n$$}, \
+{$CellContext`z, $CellContext`n$$}]}, PlotRange -> All, Boxed -> False, 
+        ImageSize -> {500, 360}, SphericalRegion -> True, ImageMargins -> 10, 
+        PlotLabel -> Text[
+          Style[
+           
+           Row[{$CellContext`n$$, 
+             " cubes per side   |   ", $CellContext`n$$^3, " total cubes", 
+             Spacer[14]}], 14, "Label"]]], 
+      "Specifications" :> {{{$CellContext`n$$, 3, "cubes along each side"}, 1,
+          10, 1}, {{$CellContext`sz$$, 0.8, "size of each cube"}, 0, 
+         1}, {{$CellContext`o$$, 0, "transparency"}, 0, 1}}, 
+      "Options" :> {
+       AutorunSequencing -> Automatic, ControllerLinking -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {258., 263.}}],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellID->729626109]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+Notice the patterns when you can see between the individual cubes, \
+particularly when you rotate the whole graphic.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.35735319202654*^9, 3.35735324665118*^9}, 
+   3.35852566702016*^9, {3.3637148824503*^9, 3.36371488374409*^9}},
+ CellID->1044312921]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 5, $CellContext`o$$ = 
+    0.076, $CellContext`sz$$ = 0.679, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 5, "cubes along each side"}, 1, 10, 1}, {{
+       Hold[$CellContext`sz$$], 0.679, "size of each cube"}, 0, 1}, {{
+       Hold[$CellContext`o$$], 0.076, "transparency"}, 0, 1}}, 
+    Typeset`size$$ = {520., 380.}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$282$$ = 
+    0, $CellContext`sz$283$$ = 0, $CellContext`o$284$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 5, $CellContext`o$$ = 
+        0.076, $CellContext`sz$$ = 0.679}, "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$282$$, 0], 
+        Hold[$CellContext`sz$$, $CellContext`sz$283$$, 0], 
+        Hold[$CellContext`o$$, $CellContext`o$284$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[1 - $CellContext`o$$], 
+         Table[
+          
+          Cuboid[{$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`x, $CellContext`y, $CellContext`z} + $CellContext`sz$$], \
+{$CellContext`x, $CellContext`n$$}, {$CellContext`y, $CellContext`n$$}, \
+{$CellContext`z, $CellContext`n$$}]}, PlotRange -> All, Boxed -> False, 
+        ImageSize -> {500, 360}, SphericalRegion -> True, ImageMargins -> 10, 
+        PlotLabel -> Text[
+          Style[
+           
+           Row[{$CellContext`n$$, 
+             " cubes per side   |   ", $CellContext`n$$^3, " total cubes", 
+             Spacer[14]}], 14, "Label"]]], 
+      "Specifications" :> {{{$CellContext`n$$, 5, "cubes along each side"}, 1,
+          10, 1}, {{$CellContext`sz$$, 0.679, "size of each cube"}, 0, 
+         1}, {{$CellContext`o$$, 0.076, "transparency"}, 0, 1}}, 
+      "Options" :> {
+       AutorunSequencing -> Automatic, ControllerLinking -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {258., 263.}}],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellID->574128871]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 8, $CellContext`o$$ = 
+    0., $CellContext`sz$$ = 0.679, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 8, "cubes along each side"}, 1, 10, 1}, {{
+       Hold[$CellContext`sz$$], 0.679, "size of each cube"}, 0, 1}, {{
+       Hold[$CellContext`o$$], 0., "transparency"}, 0, 1}}, Typeset`size$$ = {
+    520., 380.}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$332$$ = 
+    0, $CellContext`sz$333$$ = 0, $CellContext`o$334$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 8, $CellContext`o$$ = 
+        0., $CellContext`sz$$ = 0.679}, "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$332$$, 0], 
+        Hold[$CellContext`sz$$, $CellContext`sz$333$$, 0], 
+        Hold[$CellContext`o$$, $CellContext`o$334$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[1 - $CellContext`o$$], 
+         Table[
+          
+          Cuboid[{$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`x, $CellContext`y, $CellContext`z} + $CellContext`sz$$], \
+{$CellContext`x, $CellContext`n$$}, {$CellContext`y, $CellContext`n$$}, \
+{$CellContext`z, $CellContext`n$$}]}, PlotRange -> All, Boxed -> False, 
+        ImageSize -> {500, 360}, SphericalRegion -> True, ImageMargins -> 10, 
+        PlotLabel -> Text[
+          Style[
+           
+           Row[{$CellContext`n$$, 
+             " cubes per side   |   ", $CellContext`n$$^3, " total cubes", 
+             Spacer[14]}], 14, "Label"]]], 
+      "Specifications" :> {{{$CellContext`n$$, 8, "cubes along each side"}, 1,
+          10, 1}, {{$CellContext`sz$$, 0.679, "size of each cube"}, 0, 
+         1}, {{$CellContext`o$$, 0., "transparency"}, 0, 1}}, 
+      "Options" :> {
+       AutorunSequencing -> Automatic, ControllerLinking -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {258., 263.}}],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellID->156712040],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 5, $CellContext`o$$ = 
+    0.172, $CellContext`sz$$ = 0.155, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 5, "cubes along each side"}, 1, 10, 1}, {{
+       Hold[$CellContext`sz$$], 0.155, "size of each cube"}, 0, 1}, {{
+       Hold[$CellContext`o$$], 0.172, "transparency"}, 0, 1}}, 
+    Typeset`size$$ = {520., 380.}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$382$$ = 
+    0, $CellContext`sz$383$$ = 0, $CellContext`o$384$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 5, $CellContext`o$$ = 
+        0.172, $CellContext`sz$$ = 0.155}, "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$382$$, 0], 
+        Hold[$CellContext`sz$$, $CellContext`sz$383$$, 0], 
+        Hold[$CellContext`o$$, $CellContext`o$384$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[1 - $CellContext`o$$], 
+         Table[
+          
+          Cuboid[{$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`x, $CellContext`y, $CellContext`z} + $CellContext`sz$$], \
+{$CellContext`x, $CellContext`n$$}, {$CellContext`y, $CellContext`n$$}, \
+{$CellContext`z, $CellContext`n$$}]}, PlotRange -> All, Boxed -> False, 
+        ImageSize -> {500, 360}, SphericalRegion -> True, ImageMargins -> 10, 
+        PlotLabel -> Text[
+          Style[
+           
+           Row[{$CellContext`n$$, 
+             " cubes per side   |   ", $CellContext`n$$^3, " total cubes", 
+             Spacer[14]}], 14, "Label"]]], 
+      "Specifications" :> {{{$CellContext`n$$, 5, "cubes along each side"}, 1,
+          10, 1}, {{$CellContext`sz$$, 0.155, "size of each cube"}, 0, 
+         1}, {{$CellContext`o$$, 0.172, "transparency"}, 0, 1}}, 
+      "Options" :> {
+       AutorunSequencing -> Automatic, ControllerLinking -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {258., 263.}}],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellID->365647570],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 5, $CellContext`o$$ = 
+    0.172, $CellContext`sz$$ = 1., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 5, "cubes along each side"}, 1, 10, 1}, {{
+       Hold[$CellContext`sz$$], 1., "size of each cube"}, 0, 1}, {{
+       Hold[$CellContext`o$$], 0.172, "transparency"}, 0, 1}}, 
+    Typeset`size$$ = {520., 380.}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`n$432$$ = 
+    0, $CellContext`sz$433$$ = 0, $CellContext`o$434$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`n$$ = 5, $CellContext`o$$ = 
+        0.172, $CellContext`sz$$ = 1.}, "ControllerVariables" :> {
+        Hold[$CellContext`n$$, $CellContext`n$432$$, 0], 
+        Hold[$CellContext`sz$$, $CellContext`sz$433$$, 0], 
+        Hold[$CellContext`o$$, $CellContext`o$434$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[1 - $CellContext`o$$], 
+         Table[
+          
+          Cuboid[{$CellContext`x, $CellContext`y, $CellContext`z}, \
+{$CellContext`x, $CellContext`y, $CellContext`z} + $CellContext`sz$$], \
+{$CellContext`x, $CellContext`n$$}, {$CellContext`y, $CellContext`n$$}, \
+{$CellContext`z, $CellContext`n$$}]}, PlotRange -> All, Boxed -> False, 
+        ImageSize -> {500, 360}, SphericalRegion -> True, ImageMargins -> 10, 
+        PlotLabel -> Text[
+          Style[
+           
+           Row[{$CellContext`n$$, 
+             " cubes per side   |   ", $CellContext`n$$^3, " total cubes", 
+             Spacer[14]}], 14, "Label"]]], 
+      "Specifications" :> {{{$CellContext`n$$, 5, "cubes along each side"}, 1,
+          10, 1}, {{$CellContext`sz$$, 1., "size of each cube"}, 0, 
+         1}, {{$CellContext`o$$, 0.172, "transparency"}, 0, 1}}, 
+      "Options" :> {
+       AutorunSequencing -> Automatic, ControllerLinking -> True}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{564., {258., 263.}}],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellID->465019915]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell["", "ImplementationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell["", "SearchTermsSection"],
+
+Cell["", "RelatedLinksSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Stephen Wolfram",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Stephen+\
+Wolfram"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Stephen+Wolfram"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.3649195076327*^9, 3.36491951253039*^9}, 
+   3.3695661831752*^9},
+ CellID->1988006724],
+
+Cell[TextData[{
+ "Suggested by: ",
+ ButtonBox["Catherine Wolfram",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Catherine+\
+Wolfram"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Catherine+Wolfram"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.36491951597167*^9, 3.36491953349913*^9}, 
+   3.369566185472*^9},
+ CellID->1878430242]
+}, Open  ]],
+
+Cell["", "NotesSection"]
+}, Open  ]]
+},
+WindowSize->{769, 852},
+WindowMargins->{{56, Automatic}, {Automatic, 0}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[18544, 438, 310, 8, 70, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[18857, 448, 676, 16, 70, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[19536, 466, 339, 11, 70, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[19878, 479, 636, 15, 70, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[20517, 496, 843, 21, 70, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[21363, 519, 303, 8, 70, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[21669, 529, 1411, 31, 70, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[23083, 562, 881, 21, 70, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 25397, 639},
+ {"RotateAndZoomIn3D", 25505, 642},
+ {"DragLocators", 25614, 645},
+ {"CreateAndDeleteLocators", 25729, 648},
+ {"SliderZoom", 25842, 651},
+ {"GamepadControls", 25947, 654},
+ {"AutomaticAnimation", 26059, 657},
+ {"BookmarkAnimation", 26175, 660}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 142, 3, 70, "DemoTitle",
+ CellID->700863240],
+Cell[735, 28, 33, 0, 70, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[793, 32, 29, 0, 70, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[847, 36, 3023, 71, 70, "Input",
+ CellID->284180372],
+Cell[3873, 109, 2780, 57, 70, "Output",
+ CellID->729626109]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6699, 172, 36, 0, 70, "ManipulateCaptionSection"],
+Cell[6738, 174, 330, 7, 70, "ManipulateCaption",
+ CellID->1044312921]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7105, 186, 28, 0, 70, "ThumbnailSection"],
+Cell[7136, 188, 2804, 57, 70, "Output",
+ CellID->574128871]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9977, 250, 28, 0, 70, "SnapshotsSection"],
+Cell[10008, 252, 2792, 57, 70, "Output",
+ CellID->156712040],
+Cell[12803, 311, 2804, 57, 70, "Output",
+ CellID->365647570],
+Cell[15610, 370, 2792, 57, 70, "Output",
+ CellID->465019915]
+}, Open  ]],
+Cell[18417, 430, 26, 0, 70, "DetailsSection"],
+Cell[18446, 432, 33, 0, 70, "ImplementationSection"],
+Cell[CellGroupData[{
+Cell[18504, 436, 37, 0, 70, "ControlSuggestionsSection"],
+Cell[18544, 438, 310, 8, 70, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[18857, 448, 676, 16, 70, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[19536, 466, 339, 11, 70, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[19878, 479, 636, 15, 70, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[20517, 496, 843, 21, 70, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[21363, 519, 303, 8, 70, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[21669, 529, 1411, 31, 70, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[23083, 562, 881, 21, 70, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[23979, 586, 30, 0, 70, "SearchTermsSection"],
+Cell[24012, 588, 31, 0, 70, "RelatedLinksSection"],
+Cell[CellGroupData[{
+Cell[24068, 592, 25, 0, 70, "AuthorSection"],
+Cell[24096, 594, 434, 13, 70, "Author",
+ CellID->1988006724],
+Cell[24533, 609, 438, 13, 70, "Author",
+ CellID->1878430242]
+}, Open  ]],
+Cell[24986, 625, 24, 0, 70, "NotesSection"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

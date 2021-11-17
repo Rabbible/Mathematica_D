@@ -1,0 +1,2100 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     86442,       2091]
+NotebookOptionsPosition[     82277,       1963]
+NotebookOutlinePosition[     83880,       2013]
+CellTagsIndexPosition[     83552,       2001]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Circumcircle and Incircle of a Triangle", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408448839696*^9, 3.408448855198*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"circumcenter", "[", 
+     RowBox[{"pt1_", ",", "pt2_", ",", "pt3_"}], "]"}], ":=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Det", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Norm", "[", "pt1", "]"}], "^", "2"}], ",", 
+            RowBox[{"Last", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Norm", "[", "pt2", "]"}], "^", "2"}], ",", 
+            RowBox[{"Last", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Norm", "[", "pt3", "]"}], "^", "2"}], ",", 
+            RowBox[{"Last", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+        "]"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "*", 
+         RowBox[{"Det", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "pt1", "]"}], ",", 
+              RowBox[{"Last", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "pt2", "]"}], ",", 
+              RowBox[{"Last", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "pt3", "]"}], ",", 
+              RowBox[{"Last", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+          "]"}]}], ")"}]}], ",", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt1", "]"}], "^", "2"}], ",", 
+             RowBox[{"First", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt2", "]"}], "^", "2"}], ",", 
+             RowBox[{"First", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt3", "]"}], "^", "2"}], ",", 
+             RowBox[{"First", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+         "]"}]}], "/", 
+       RowBox[{"(", 
+        RowBox[{"2", "*", 
+         RowBox[{"Det", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "pt1", "]"}], ",", 
+              RowBox[{"Last", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "pt2", "]"}], ",", 
+              RowBox[{"Last", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"First", "[", "pt3", "]"}], ",", 
+              RowBox[{"Last", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+          "]"}]}], ")"}]}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"circumradius", "[", 
+     RowBox[{"pt1_", ",", "pt2_", ",", "pt3_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt1", "]"}], "^", "2"}], ",", 
+             RowBox[{"Last", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt2", "]"}], "^", "2"}], ",", 
+             RowBox[{"Last", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt3", "]"}], "^", "2"}], ",", 
+             RowBox[{"Last", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+         "]"}], "^", "2"}], "+", 
+       RowBox[{
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt1", "]"}], "^", "2"}], ",", 
+             RowBox[{"First", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt2", "]"}], "^", "2"}], ",", 
+             RowBox[{"First", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Norm", "[", "pt3", "]"}], "^", "2"}], ",", 
+             RowBox[{"First", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+         "]"}], "^", "2"}], "-", 
+       RowBox[{"4", "*", 
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "pt1", "]"}], ",", 
+             RowBox[{"Last", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "pt2", "]"}], ",", 
+             RowBox[{"Last", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "pt3", "]"}], ",", 
+             RowBox[{"Last", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+         "]"}], "*", 
+        RowBox[{"-", 
+         RowBox[{"Det", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Norm", "[", "pt1", "]"}], "^", "2"}], ",", 
+              RowBox[{"First", "[", "pt1", "]"}], ",", 
+              RowBox[{"Last", "[", "pt1", "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Norm", "[", "pt2", "]"}], "^", "2"}], ",", 
+              RowBox[{"First", "[", "pt2", "]"}], ",", 
+              RowBox[{"Last", "[", "pt2", "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Norm", "[", "pt3", "]"}], "^", "2"}], ",", 
+              RowBox[{"First", "[", "pt3", "]"}], ",", 
+              RowBox[{"Last", "[", "pt3", "]"}]}], "}"}]}], "}"}], 
+          "]"}]}]}]}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"2", "*", 
+       RowBox[{"Abs", "[", 
+        RowBox[{"Det", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "pt1", "]"}], ",", 
+             RowBox[{"Last", "[", "pt1", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "pt2", "]"}], ",", 
+             RowBox[{"Last", "[", "pt2", "]"}], ",", "1"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"First", "[", "pt3", "]"}], ",", 
+             RowBox[{"Last", "[", "pt3", "]"}], ",", "1"}], "}"}]}], "}"}], 
+         "]"}], "]"}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"incenter", "[", 
+     RowBox[{"pt1_", ",", "pt2_", ",", "pt3_"}], "]"}], ":=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt2", "-", "pt3"}], "]"}], "*", 
+          RowBox[{"First", "[", "pt1", "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt3"}], "]"}], "*", 
+          RowBox[{"First", "[", "pt2", "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt2"}], "]"}], "*", 
+          RowBox[{"First", "[", "pt3", "]"}]}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt2", "-", "pt3"}], "]"}], "+", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt3"}], "]"}], "+", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt2"}], "]"}]}], ")"}]}], ",", " ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt2", "-", "pt3"}], "]"}], "*", 
+          RowBox[{"Last", "[", "pt1", "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt3"}], "]"}], "*", 
+          RowBox[{"Last", "[", "pt2", "]"}]}], "+", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt2"}], "]"}], "*", 
+          RowBox[{"Last", "[", "pt3", "]"}]}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt2", "-", "pt3"}], "]"}], "+", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt3"}], "]"}], "+", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt2"}], "]"}]}], ")"}]}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"inradius", "[", 
+     RowBox[{"pt1_", ",", "pt2_", ",", "pt3_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt3"}], "]"}], "+", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt2"}], "]"}], "-", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt2", "-", "pt3"}], "]"}]}], ")"}], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt2"}], "]"}], "+", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt2", "-", "pt3"}], "]"}], "-", 
+         RowBox[{"Norm", "[", 
+          RowBox[{"pt1", "-", "pt3"}], "]"}]}], ")"}], "*", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt2", "-", "pt3"}], "]"}], "+", 
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt3"}], "]"}], "-", 
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt2"}], "]"}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt2", "-", "pt3"}], "]"}], "+", 
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt3"}], "]"}], "+", 
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt1", "-", "pt2"}], "]"}]}], ")"}]}]}], "]"}], "/", 
+     "2"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pf", "[", 
+    RowBox[{"pt1_", ",", "pt2_", ",", "pt3_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"pt2", "-", "pt3"}], ")"}], ".", 
+        RowBox[{"(", 
+         RowBox[{"pt1", "-", "pt3"}], ")"}]}], "/", 
+       RowBox[{
+        RowBox[{"Norm", "[", 
+         RowBox[{"pt2", "-", "pt3"}], "]"}], "^", "2"}]}], ")"}], "*", 
+     "pt2"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"pt2", "-", "pt3"}], ")"}], ".", 
+          RowBox[{"(", 
+           RowBox[{"pt1", "-", "pt3"}], ")"}]}], "/", 
+         RowBox[{
+          RowBox[{"Norm", "[", 
+           RowBox[{"pt2", "-", "pt3"}], "]"}], "^", "2"}]}], ")"}]}], ")"}], 
+     "*", "pt3"}]}]}], " ", ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408448936958*^9, 3.408448938053*^9}, {
+   3.408448995832*^9, 3.408448996325*^9}, {3.408449960054*^9, 
+   3.408449961968*^9}},
+ CellID->368609423]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"N", "[", 
+        RowBox[{"inradius", "[", 
+         RowBox[{"a", ",", "b", ",", "c"}], "]"}], "]"}], "<", ".001"}], ",", 
+      RowBox[{
+       RowBox[{"b", "=", 
+        RowBox[{"b", "+", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", ".2"}], ",", ".2"}], "}"}], ",", "2"}], "]"}]}]}], 
+       ";", 
+       RowBox[{"c", "=", 
+        RowBox[{"c", "+", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", ".2"}], ",", ".2"}], "}"}], ",", "2"}], 
+          "]"}]}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Quiet", "@", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"White", ",", 
+           RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
+           RowBox[{"Opacity", "[", "0", "]"}], ",", 
+           RowBox[{"Polygon", "[", 
+            RowBox[{"{", 
+             RowBox[{"a", ",", "b", ",", "c"}], "}"}], "]"}]}], "}"}], ",", 
+         " ", "\[IndentingNewLine]", 
+         RowBox[{"ColorData", "[", 
+          RowBox[{"1", ",", "2"}], "]"}], ",", 
+         RowBox[{"Circle", "[", 
+          RowBox[{
+           RowBox[{"incenter", "[", 
+            RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", 
+           RowBox[{"inradius", "[", 
+            RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], "]"}], ",", " ", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ColorData", "[", 
+          RowBox[{"1", ",", "3"}], "]"}], ",", 
+         RowBox[{"Circle", "[", 
+          RowBox[{
+           RowBox[{"circumcenter", "[", 
+            RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", 
+           RowBox[{"circumradius", "[", 
+            RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], "]"}], ",", " ", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ColorData", "[", 
+          RowBox[{"1", ",", "1"}], "]"}], ",", " ", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"circumcenter", "[", 
+             RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", 
+            RowBox[{"pf", "[", 
+             RowBox[{
+              RowBox[{"circumcenter", "[", 
+               RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", "b", ",", "c"}],
+              "]"}]}], "}"}], "]"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"circumcenter", "[", 
+             RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", 
+            RowBox[{"pf", "[", 
+             RowBox[{
+              RowBox[{"circumcenter", "[", 
+               RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", "a", ",", "c"}],
+              "]"}]}], "}"}], "]"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"circumcenter", "[", 
+             RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", 
+            RowBox[{"pf", "[", 
+             RowBox[{
+              RowBox[{"circumcenter", "[", 
+               RowBox[{"a", ",", "b", ",", "c"}], "]"}], ",", "a", ",", "b"}],
+              "]"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PointSize", "[", ".015", "]"}], ",", " ", 
+         RowBox[{"Point", "[", 
+          RowBox[{"circumcenter", "[", 
+           RowBox[{"a", ",", "b", ",", "c"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ColorData", "[", 
+          RowBox[{"1", ",", "4"}], "]"}], ",", " ", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{"a", ",", 
+            RowBox[{"incenter", "[", 
+             RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], "}"}], "]"}], ",", 
+         "\[IndentingNewLine]", " ", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{"b", ",", 
+            RowBox[{"incenter", "[", 
+             RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], "}"}], "]"}], ",", 
+         "\[IndentingNewLine]", " ", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{"c", ",", 
+            RowBox[{"incenter", "[", 
+             RowBox[{"a", ",", "b", ",", "c"}], "]"}]}], "}"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PointSize", "[", ".015", "]"}], ",", " ", 
+         RowBox[{"Point", "[", 
+          RowBox[{"incenter", "[", 
+           RowBox[{"a", ",", "b", ",", "c"}], "]"}], "]"}]}], "}"}], ",", " ",
+        "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"575", ",", "475"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"Row", "[", 
+         RowBox[{"{", 
+          RowBox[{"\"\<The \>\"", ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<incircle\>\"", ",", " ", 
+             RowBox[{"ColorData", "[", 
+              RowBox[{"1", ",", "2"}], "]"}]}], "]"}], ",", " ", 
+           "\"\< and \>\"", ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<circumcircle\>\"", ",", " ", 
+             RowBox[{"ColorData", "[", 
+              RowBox[{"1", ",", "3"}], "]"}]}], "]"}], ",", " ", 
+           "\"\< of a triangle.\>\""}], "}"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "4"}], ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}]}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}], ",", "Locator", ",", " ", 
+     RowBox[{"Appearance", "\[Rule]", 
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<\[FilledCircle]\>\"", ",", "Medium", ",", "Black"}], 
+       "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}], ",", "Locator", ",", " ", 
+     RowBox[{"Appearance", "\[Rule]", 
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<\[FilledCircle]\>\"", ",", "Medium", ",", "Black"}], 
+       "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"c", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}], ",", "Locator", ",", " ", 
+     RowBox[{"Appearance", "\[Rule]", 
+      RowBox[{"Style", "[", 
+       RowBox[{"\"\<\[FilledCircle]\>\"", ",", "Medium", ",", "Black"}], 
+       "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.408448968422*^9, {3.4084490038199997`*^9, 
+   3.408449009593*^9}, {3.4084493317530003`*^9, 3.408449363491*^9}, {
+   3.408449910025*^9, 3.4084501285769997`*^9}, {3.4084639528172407`*^9, 
+   3.4084639553797407`*^9}, {3.408463994707865*^9, 3.4084640125984907`*^9}, {
+   3.408710424652985*^9, 3.408710459059235*^9}, {3.408710524590485*^9, 
+   3.4087105474186106`*^9}, {3.5059350089910345`*^9, 3.505935009319067*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = {-1, -1}, $CellContext`b$$ = {
+    1, -1}, $CellContext`c$$ = {0, 1}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], {-1, -1}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`b$$], {1, -1}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`c$$], {0, 1}}, {-2, -2}, {2, 2}}}, Typeset`size$$ = {
+    575., {235., 240.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$303513$$ = {0, 
+    0}, $CellContext`b$303514$$ = {0, 0}, $CellContext`c$303515$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = {-1, -1}, $CellContext`b$$ = {
+         1, -1}, $CellContext`c$$ = {0, 1}}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$303513$$, {0, 0}], 
+        Hold[$CellContext`b$$, $CellContext`b$303514$$, {0, 0}], 
+        Hold[$CellContext`c$$, $CellContext`c$303515$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> (If[N[
+           $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]] < 
+         0.001, $CellContext`b$$ = $CellContext`b$$ + 
+           RandomReal[{-0.2, 0.2}, 2]; $CellContext`c$$ = $CellContext`c$$ + 
+           RandomReal[{-0.2, 0.2}, 2]]; Quiet[
+         Graphics[{{White, 
+            EdgeForm[Black], 
+            Opacity[0], 
+            Polygon[{$CellContext`a$$, $CellContext`b$$, $CellContext`c$$}]}, 
+           ColorData[1, 2], 
+           Circle[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 3], 
+           Circle[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`circumradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 1], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`b$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`b$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 4], 
+           Line[{$CellContext`a$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`b$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`c$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]]}, ImageSize -> {575, 475}, PlotLabel -> Row[{"The ", 
+             Style["incircle", 
+              ColorData[1, 2]], " and ", 
+             Style["circumcircle", 
+              ColorData[1, 3]], " of a triangle."}], 
+          PlotRange -> {{-4, 4}, {-4, 3}}]]), 
+      "Specifications" :> {{{$CellContext`a$$, {-1, -1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`b$$, {1, -1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`c$$, {0, 1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{630., {269., 274.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`inradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := 
+       Sqrt[(Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2] - 
+           Norm[$CellContext`pt2 - $CellContext`pt3]) (
+           Norm[$CellContext`pt1 - $CellContext`pt2] + 
+           Norm[$CellContext`pt2 - $CellContext`pt3] - 
+           Norm[$CellContext`pt1 - $CellContext`pt3]) ((
+            Norm[$CellContext`pt2 - $CellContext`pt3] + 
+            Norm[$CellContext`pt1 - $CellContext`pt3] - 
+            Norm[$CellContext`pt1 - $CellContext`pt2])/(
+           Norm[$CellContext`pt2 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2]))]/
+        2, $CellContext`incenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {(
+          Norm[$CellContext`pt2 - $CellContext`pt3] First[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] First[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] First[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2]), (
+          Norm[$CellContext`pt2 - $CellContext`pt3] Last[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] Last[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] Last[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2])}, \
+$CellContext`circumcenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {Det[{{Norm[$CellContext`pt1]^2, 
+             Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+             Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+             Last[$CellContext`pt3], 1}}]/(2 Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]), -(Det[{{Norm[$CellContext`pt1]^2, 
+              First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+              First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+              First[$CellContext`pt3], 1}}]/(2 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}]))}, $CellContext`circumradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := Sqrt[Det[{{Norm[$CellContext`pt1]^2, 
+               Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               Last[$CellContext`pt3], 1}}]^2 + 
+          Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 1}}]^2 - 4 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}] (-Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 
+               Last[$CellContext`pt1]}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 
+               Last[$CellContext`pt2]}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 
+               Last[$CellContext`pt3]}}])]/(2 Abs[
+          Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]]), $CellContext`pf[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := (
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt2 + (1 - 
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt3, 
+       Attributes[PlotRange] = {ReadProtected}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->389627841]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+The circumcircle of a triangle is the unique circle determined by the three \
+vertices of the triangle. Its center is called the circumcenter (blue point) \
+and is the point where the (blue) perpendicular bisectors of the sides of the \
+triangle intersect. \
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.40844948899*^9, 3.408449490935*^9}, {
+   3.40845019325*^9, 3.408450222764*^9}, {3.408570730970911*^9, 
+   3.408570796739847*^9}}],
+
+Cell["\<\
+The incircle of a triangle is the circle inscribed in the triangle. Its \
+center is called the incenter (green point) and is the point where the \
+(green) bisectors of the angles of the triangle intersect. \
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.40844948899*^9, 3.408449490935*^9}, {
+   3.40845019325*^9, 3.408450222764*^9}, {3.408570730970911*^9, 
+   3.4085708283895845`*^9}, {3.488062045975718*^9, 3.488062054513632*^9}},
+ CellID->105214027],
+
+Cell["\<\
+The incenter and the circumcenter coincide if and only if the triangle is \
+equilateral. Alter the shape of the triangle by dragging the vertices.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.40844948899*^9, 3.408449490935*^9}, {
+   3.40845019325*^9, 3.408450222764*^9}, {3.408570730970911*^9, 
+   3.4085708407525187`*^9}},
+ CellID->469162229]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = {-1, -1}, $CellContext`b$$ = {
+    1, -1}, $CellContext`c$$ = {0, 1}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], {-1, -1}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`b$$], {1, -1}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`c$$], {0, 1}}, {-2, -2}, {2, 2}}}, Typeset`size$$ = {
+    575., {235., 240.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$303576$$ = {0, 
+    0}, $CellContext`b$303577$$ = {0, 0}, $CellContext`c$303578$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = {-1, -1}, $CellContext`b$$ = {
+         1, -1}, $CellContext`c$$ = {0, 1}}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$303576$$, {0, 0}], 
+        Hold[$CellContext`b$$, $CellContext`b$303577$$, {0, 0}], 
+        Hold[$CellContext`c$$, $CellContext`c$303578$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> (If[N[
+           $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]] < 
+         0.001, $CellContext`b$$ = $CellContext`b$$ + 
+           RandomReal[{-0.2, 0.2}, 2]; $CellContext`c$$ = $CellContext`c$$ + 
+           RandomReal[{-0.2, 0.2}, 2]]; Quiet[
+         Graphics[{{White, 
+            EdgeForm[Black], 
+            Opacity[0], 
+            Polygon[{$CellContext`a$$, $CellContext`b$$, $CellContext`c$$}]}, 
+           ColorData[1, 2], 
+           Circle[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 3], 
+           Circle[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`circumradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 1], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`b$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`b$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 4], 
+           Line[{$CellContext`a$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`b$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`c$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]]}, ImageSize -> {575, 475}, PlotLabel -> Row[{"The ", 
+             Style["incircle", 
+              ColorData[1, 2]], " and ", 
+             Style["circumcircle", 
+              ColorData[1, 3]], " of a triangle."}], 
+          PlotRange -> {{-4, 4}, {-4, 3}}]]), 
+      "Specifications" :> {{{$CellContext`a$$, {-1, -1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`b$$, {1, -1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`c$$, {0, 1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{630., {269., 274.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`inradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := 
+       Sqrt[(Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2] - 
+           Norm[$CellContext`pt2 - $CellContext`pt3]) (
+           Norm[$CellContext`pt1 - $CellContext`pt2] + 
+           Norm[$CellContext`pt2 - $CellContext`pt3] - 
+           Norm[$CellContext`pt1 - $CellContext`pt3]) ((
+            Norm[$CellContext`pt2 - $CellContext`pt3] + 
+            Norm[$CellContext`pt1 - $CellContext`pt3] - 
+            Norm[$CellContext`pt1 - $CellContext`pt2])/(
+           Norm[$CellContext`pt2 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2]))]/
+        2, $CellContext`incenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {(
+          Norm[$CellContext`pt2 - $CellContext`pt3] First[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] First[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] First[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2]), (
+          Norm[$CellContext`pt2 - $CellContext`pt3] Last[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] Last[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] Last[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2])}, \
+$CellContext`circumcenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {Det[{{Norm[$CellContext`pt1]^2, 
+             Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+             Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+             Last[$CellContext`pt3], 1}}]/(2 Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]), -(Det[{{Norm[$CellContext`pt1]^2, 
+              First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+              First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+              First[$CellContext`pt3], 1}}]/(2 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}]))}, $CellContext`circumradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := Sqrt[Det[{{Norm[$CellContext`pt1]^2, 
+               Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               Last[$CellContext`pt3], 1}}]^2 + 
+          Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 1}}]^2 - 4 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}] (-Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 
+               Last[$CellContext`pt1]}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 
+               Last[$CellContext`pt2]}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 
+               Last[$CellContext`pt3]}}])]/(2 Abs[
+          Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]]), $CellContext`pf[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := (
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt2 + (1 - 
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt3, 
+       Attributes[PlotRange] = {ReadProtected}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->134762281]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = {-1, -1}, $CellContext`b$$ = {
+    0.798, -1.12}, $CellContext`c$$ = {2., 1.1600000000000001`}, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], {-1, -1}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`b$$], {0.798, -1.12}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`c$$], {2., 1.1600000000000001`}}, {-2, -2}, {2, 2}}},
+     Typeset`size$$ = Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$303639$$ = {0, 
+    0}, $CellContext`b$303640$$ = {0, 0}, $CellContext`c$303641$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = {-1, -1}, $CellContext`b$$ = {
+         0.798, -1.12}, $CellContext`c$$ = {2., 1.1600000000000001`}}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$303639$$, {0, 0}], 
+        Hold[$CellContext`b$$, $CellContext`b$303640$$, {0, 0}], 
+        Hold[$CellContext`c$$, $CellContext`c$303641$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> (If[N[
+           $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]] < 
+         0.001, $CellContext`b$$ = $CellContext`b$$ + 
+           RandomReal[{-0.2, 0.2}, 2]; $CellContext`c$$ = $CellContext`c$$ + 
+           RandomReal[{-0.2, 0.2}, 2]]; Quiet[
+         Graphics[{{White, 
+            EdgeForm[Black], 
+            Opacity[0], 
+            Polygon[{$CellContext`a$$, $CellContext`b$$, $CellContext`c$$}]}, 
+           ColorData[1, 2], 
+           Circle[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 3], 
+           Circle[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`circumradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 1], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`b$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`b$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 4], 
+           Line[{$CellContext`a$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`b$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`c$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]]}, ImageSize -> {575, 475}, PlotLabel -> Row[{"The ", 
+             Style["incircle", 
+              ColorData[1, 2]], " and ", 
+             Style["circumcircle", 
+              ColorData[1, 3]], " of a triangle."}], 
+          PlotRange -> {{-4, 4}, {-4, 3}}]]), 
+      "Specifications" :> {{{$CellContext`a$$, {-1, -1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`b$$, {0.798, -1.12}}, {-2, -2}, {2, 
+         2}, ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`c$$, {2., 
+          1.1600000000000001`}}, {-2, -2}, {2, 2}, ControlType -> Locator, 
+         Appearance -> Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`inradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := 
+       Sqrt[(Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2] - 
+           Norm[$CellContext`pt2 - $CellContext`pt3]) (
+           Norm[$CellContext`pt1 - $CellContext`pt2] + 
+           Norm[$CellContext`pt2 - $CellContext`pt3] - 
+           Norm[$CellContext`pt1 - $CellContext`pt3]) ((
+            Norm[$CellContext`pt2 - $CellContext`pt3] + 
+            Norm[$CellContext`pt1 - $CellContext`pt3] - 
+            Norm[$CellContext`pt1 - $CellContext`pt2])/(
+           Norm[$CellContext`pt2 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2]))]/
+        2, $CellContext`incenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {(
+          Norm[$CellContext`pt2 - $CellContext`pt3] First[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] First[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] First[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2]), (
+          Norm[$CellContext`pt2 - $CellContext`pt3] Last[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] Last[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] Last[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2])}, \
+$CellContext`circumcenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {Det[{{Norm[$CellContext`pt1]^2, 
+             Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+             Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+             Last[$CellContext`pt3], 1}}]/(2 Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]), -(Det[{{Norm[$CellContext`pt1]^2, 
+              First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+              First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+              First[$CellContext`pt3], 1}}]/(2 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}]))}, $CellContext`circumradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := Sqrt[Det[{{Norm[$CellContext`pt1]^2, 
+               Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               Last[$CellContext`pt3], 1}}]^2 + 
+          Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 1}}]^2 - 4 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}] (-Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 
+               Last[$CellContext`pt1]}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 
+               Last[$CellContext`pt2]}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 
+               Last[$CellContext`pt3]}}])]/(2 Abs[
+          Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]]), $CellContext`pf[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := (
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt2 + (1 - 
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt3, 
+       Attributes[PlotRange] = {ReadProtected}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->656177499],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = {-1.828, -1.62}, $CellContext`b$$ = {
+    1, -1}, $CellContext`c$$ = {0, 1}, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], {-1.828, -1.62}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`b$$], {1, -1}}, {-2, -2}, {2, 2}}, {{
+       Hold[$CellContext`c$$], {0, 1}}, {-2, -2}, {2, 2}}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$303702$$ = {0, 
+    0}, $CellContext`b$303703$$ = {0, 0}, $CellContext`c$303704$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = {-1.828, -1.62}, $CellContext`b$$ = {
+         1, -1}, $CellContext`c$$ = {0, 1}}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$303702$$, {0, 0}], 
+        Hold[$CellContext`b$$, $CellContext`b$303703$$, {0, 0}], 
+        Hold[$CellContext`c$$, $CellContext`c$303704$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> (If[N[
+           $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]] < 
+         0.001, $CellContext`b$$ = $CellContext`b$$ + 
+           RandomReal[{-0.2, 0.2}, 2]; $CellContext`c$$ = $CellContext`c$$ + 
+           RandomReal[{-0.2, 0.2}, 2]]; Quiet[
+         Graphics[{{White, 
+            EdgeForm[Black], 
+            Opacity[0], 
+            Polygon[{$CellContext`a$$, $CellContext`b$$, $CellContext`c$$}]}, 
+           ColorData[1, 2], 
+           Circle[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 3], 
+           Circle[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`circumradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 1], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`b$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`b$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 4], 
+           Line[{$CellContext`a$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`b$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`c$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]]}, ImageSize -> {575, 475}, PlotLabel -> Row[{"The ", 
+             Style["incircle", 
+              ColorData[1, 2]], " and ", 
+             Style["circumcircle", 
+              ColorData[1, 3]], " of a triangle."}], 
+          PlotRange -> {{-4, 4}, {-4, 3}}]]), 
+      "Specifications" :> {{{$CellContext`a$$, {-1.828, -1.62}}, {-2, -2}, {2,
+          2}, ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`b$$, {1, -1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`c$$, {0, 1}}, {-2, -2}, {2, 2}, 
+         ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`inradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := 
+       Sqrt[(Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2] - 
+           Norm[$CellContext`pt2 - $CellContext`pt3]) (
+           Norm[$CellContext`pt1 - $CellContext`pt2] + 
+           Norm[$CellContext`pt2 - $CellContext`pt3] - 
+           Norm[$CellContext`pt1 - $CellContext`pt3]) ((
+            Norm[$CellContext`pt2 - $CellContext`pt3] + 
+            Norm[$CellContext`pt1 - $CellContext`pt3] - 
+            Norm[$CellContext`pt1 - $CellContext`pt2])/(
+           Norm[$CellContext`pt2 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2]))]/
+        2, $CellContext`incenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {(
+          Norm[$CellContext`pt2 - $CellContext`pt3] First[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] First[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] First[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2]), (
+          Norm[$CellContext`pt2 - $CellContext`pt3] Last[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] Last[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] Last[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2])}, \
+$CellContext`circumcenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {Det[{{Norm[$CellContext`pt1]^2, 
+             Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+             Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+             Last[$CellContext`pt3], 1}}]/(2 Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]), -(Det[{{Norm[$CellContext`pt1]^2, 
+              First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+              First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+              First[$CellContext`pt3], 1}}]/(2 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}]))}, $CellContext`circumradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := Sqrt[Det[{{Norm[$CellContext`pt1]^2, 
+               Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               Last[$CellContext`pt3], 1}}]^2 + 
+          Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 1}}]^2 - 4 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}] (-Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 
+               Last[$CellContext`pt1]}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 
+               Last[$CellContext`pt2]}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 
+               Last[$CellContext`pt3]}}])]/(2 Abs[
+          Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]]), $CellContext`pf[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := (
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt2 + (1 - 
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt3, 
+       Attributes[PlotRange] = {ReadProtected}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->284232301],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = {-2, -0.8799999999999999}, \
+$CellContext`b$$ = {1.8479999999999999`, -2}, $CellContext`c$$ = {0.972, 2.}, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`a$$], {-2, -0.8799999999999999}}, {-2, -2}, {2, 
+      2}}, {{
+       Hold[$CellContext`b$$], {1.8479999999999999`, -2}}, {-2, -2}, {2, 
+      2}}, {{
+       Hold[$CellContext`c$$], {0.972, 2.}}, {-2, -2}, {2, 2}}}, 
+    Typeset`size$$ = Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = False, $CellContext`a$303765$$ = {0, 
+    0}, $CellContext`b$303766$$ = {0, 0}, $CellContext`c$303767$$ = {0, 0}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = {-2, -0.8799999999999999}, \
+$CellContext`b$$ = {1.8479999999999999`, -2}, $CellContext`c$$ = {0.972, 2.}},
+       "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$303765$$, {0, 0}], 
+        Hold[$CellContext`b$$, $CellContext`b$303766$$, {0, 0}], 
+        Hold[$CellContext`c$$, $CellContext`c$303767$$, {0, 0}]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> (If[N[
+           $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]] < 
+         0.001, $CellContext`b$$ = $CellContext`b$$ + 
+           RandomReal[{-0.2, 0.2}, 2]; $CellContext`c$$ = $CellContext`c$$ + 
+           RandomReal[{-0.2, 0.2}, 2]]; Quiet[
+         Graphics[{{White, 
+            EdgeForm[Black], 
+            Opacity[0], 
+            Polygon[{$CellContext`a$$, $CellContext`b$$, $CellContext`c$$}]}, 
+           ColorData[1, 2], 
+           Circle[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`inradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 3], 
+           Circle[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+            $CellContext`circumradius[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 1], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`b$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`c$$]}], 
+           Line[{
+             $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], 
+             $CellContext`pf[
+              $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$], $CellContext`a$$, $CellContext`b$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`circumcenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]], 
+           ColorData[1, 4], 
+           Line[{$CellContext`a$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`b$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           Line[{$CellContext`c$$, 
+             $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]}], 
+           PointSize[0.015], 
+           Point[
+            $CellContext`incenter[$CellContext`a$$, $CellContext`b$$, \
+$CellContext`c$$]]}, ImageSize -> {575, 475}, PlotLabel -> Row[{"The ", 
+             Style["incircle", 
+              ColorData[1, 2]], " and ", 
+             Style["circumcircle", 
+              ColorData[1, 3]], " of a triangle."}], 
+          PlotRange -> {{-4, 4}, {-4, 3}}]]), 
+      "Specifications" :> {{{$CellContext`a$$, {-2, -0.8799999999999999}}, \
+{-2, -2}, {2, 2}, ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`b$$, {
+          1.8479999999999999`, -2}}, {-2, -2}, {2, 2}, ControlType -> Locator,
+          Appearance -> Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}, {{$CellContext`c$$, {0.972, 2.}}, {-2, -2}, {2, 2},
+          ControlType -> Locator, Appearance -> 
+         Style["\[FilledCircle]", Medium, 
+           GrayLevel[0]]}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`inradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := 
+       Sqrt[(Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2] - 
+           Norm[$CellContext`pt2 - $CellContext`pt3]) (
+           Norm[$CellContext`pt1 - $CellContext`pt2] + 
+           Norm[$CellContext`pt2 - $CellContext`pt3] - 
+           Norm[$CellContext`pt1 - $CellContext`pt3]) ((
+            Norm[$CellContext`pt2 - $CellContext`pt3] + 
+            Norm[$CellContext`pt1 - $CellContext`pt3] - 
+            Norm[$CellContext`pt1 - $CellContext`pt2])/(
+           Norm[$CellContext`pt2 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt3] + 
+           Norm[$CellContext`pt1 - $CellContext`pt2]))]/
+        2, $CellContext`incenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {(
+          Norm[$CellContext`pt2 - $CellContext`pt3] First[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] First[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] First[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2]), (
+          Norm[$CellContext`pt2 - $CellContext`pt3] Last[$CellContext`pt1] + 
+          Norm[$CellContext`pt1 - $CellContext`pt3] Last[$CellContext`pt2] + 
+          Norm[$CellContext`pt1 - $CellContext`pt2] Last[$CellContext`pt3])/(
+         Norm[$CellContext`pt2 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt3] + 
+         Norm[$CellContext`pt1 - $CellContext`pt2])}, \
+$CellContext`circumcenter[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := {Det[{{Norm[$CellContext`pt1]^2, 
+             Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+             Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+             Last[$CellContext`pt3], 1}}]/(2 Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]), -(Det[{{Norm[$CellContext`pt1]^2, 
+              First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+              First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+              First[$CellContext`pt3], 1}}]/(2 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}]))}, $CellContext`circumradius[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := Sqrt[Det[{{Norm[$CellContext`pt1]^2, 
+               Last[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               Last[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               Last[$CellContext`pt3], 1}}]^2 + 
+          Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 1}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 1}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 1}}]^2 - 4 Det[{{
+              First[$CellContext`pt1], 
+              Last[$CellContext`pt1], 1}, {
+              First[$CellContext`pt2], 
+              Last[$CellContext`pt2], 1}, {
+              First[$CellContext`pt3], 
+              Last[$CellContext`pt3], 1}}] (-Det[{{Norm[$CellContext`pt1]^2, 
+               First[$CellContext`pt1], 
+               Last[$CellContext`pt1]}, {Norm[$CellContext`pt2]^2, 
+               First[$CellContext`pt2], 
+               Last[$CellContext`pt2]}, {Norm[$CellContext`pt3]^2, 
+               First[$CellContext`pt3], 
+               Last[$CellContext`pt3]}}])]/(2 Abs[
+          Det[{{
+             First[$CellContext`pt1], 
+             Last[$CellContext`pt1], 1}, {
+             First[$CellContext`pt2], 
+             Last[$CellContext`pt2], 1}, {
+             First[$CellContext`pt3], 
+             Last[$CellContext`pt3], 1}}]]), $CellContext`pf[
+         Pattern[$CellContext`pt1, 
+          Blank[]], 
+         Pattern[$CellContext`pt2, 
+          Blank[]], 
+         Pattern[$CellContext`pt3, 
+          Blank[]]] := (
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt2 + (1 - 
+          Dot[$CellContext`pt2 - $CellContext`pt3, $CellContext`pt1 - \
+$CellContext`pt3]/
+          Norm[$CellContext`pt2 - $CellContext`pt3]^2) $CellContext`pt3, 
+       Attributes[PlotRange] = {ReadProtected}}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->770483072]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4084494485*^9, 3.408464054489115*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.408449451086*^9},
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["geometry", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.40844945812*^9, 3.4084494597320004`*^9}, {
+   3.408449845538*^9, 3.40844984554*^9}},
+ CellID->477098772],
+
+Cell["circle", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408449845906*^9, 3.408449854487*^9}},
+ CellID->252999870],
+
+Cell["bisector", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408449855333*^9, 3.408449856823*^9}},
+ CellID->151389868],
+
+Cell["equilateral", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408449857008*^9, 3.408449858631*^9}},
+ CellID->480706079]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Incircle",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/Incircle.html"], None}]], "RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408449722707*^9, 3.408449744968*^9}},
+ CellID->211112186],
+
+Cell[TextData[ButtonBox["Circumcircle",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/Circumcircle.html"], 
+   None}]], "RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408449734566*^9, 3.408449771098*^9}},
+ CellID->142464775]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Chris Boucher",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Chris+Boucher"],
+     None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Chris+Boucher"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.408449773285*^9, 3.4084497759639997`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{921, 681},
+WindowMargins->{{46, Automatic}, {106, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[74893, 1745, 392, 9, 22, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[75288, 1756, 678, 16, 22, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[75969, 1774, 399, 12, 22, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[76371, 1788, 637, 15, 22, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[77011, 1805, 844, 21, 22, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[77858, 1828, 369, 9, 22, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[78230, 1839, 1412, 31, 22, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[79645, 1872, 882, 21, 22, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 82653, 1974},
+ {"RotateAndZoomIn3D", 82762, 1977},
+ {"DragLocators", 82872, 1980},
+ {"CreateAndDeleteLocators", 82988, 1983},
+ {"SliderZoom", 83102, 1986},
+ {"GamepadControls", 83208, 1989},
+ {"AutomaticAnimation", 83321, 1992},
+ {"BookmarkAnimation", 83438, 1995}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 144, 2, 74, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[736, 28, 33, 0, 266, "InitializationSection"],
+Cell[772, 30, 12170, 342, 688, "Input",
+ InitializationCell->True,
+ CellID->368609423]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12979, 377, 29, 0, 188, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[13033, 381, 8009, 206, 428, "Input"],
+Cell[21045, 589, 10406, 218, 555, "Output",
+ CellID->389627841]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31497, 813, 36, 0, 166, "ManipulateCaptionSection"],
+Cell[31536, 815, 470, 9, 37, "ManipulateCaption"],
+Cell[32009, 826, 487, 9, 37, "ManipulateCaption",
+ CellID->105214027],
+Cell[32499, 837, 381, 8, 37, "ManipulateCaption",
+ CellID->469162229]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32917, 850, 28, 0, 168, "ThumbnailSection"],
+Cell[32948, 852, 10406, 218, 555, "Output",
+ CellID->134762281]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43391, 1075, 28, 0, 138, "SnapshotsSection"],
+Cell[43422, 1077, 10464, 218, 37, "Output",
+ CellID->656177499],
+Cell[53889, 1297, 10380, 217, 37, "Output",
+ CellID->284232301],
+Cell[64272, 1516, 10515, 220, 37, "Output",
+ CellID->770483072]
+}, Open  ]],
+Cell[74802, 1739, 26, 0, 332, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[74853, 1743, 37, 0, 108, "ControlSuggestionsSection"],
+Cell[74893, 1745, 392, 9, 22, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[75288, 1756, 678, 16, 22, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[75969, 1774, 399, 12, 22, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[76371, 1788, 637, 15, 22, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[77011, 1805, 844, 21, 22, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[77858, 1828, 369, 9, 22, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[78230, 1839, 1412, 31, 22, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[79645, 1872, 882, 21, 22, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[80564, 1898, 30, 0, 152, "SearchTermsSection"],
+Cell[80597, 1900, 182, 4, 22, "SearchTerms",
+ CellID->477098772],
+Cell[80782, 1906, 133, 3, 22, "SearchTerms",
+ CellID->252999870],
+Cell[80918, 1911, 135, 3, 22, "SearchTerms",
+ CellID->151389868],
+Cell[81056, 1916, 138, 3, 22, "SearchTerms",
+ CellID->480706079]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81231, 1924, 31, 0, 138, "RelatedLinksSection"],
+Cell[81265, 1926, 258, 6, 22, "RelatedLinks",
+ CellID->211112186],
+Cell[81526, 1934, 270, 7, 22, "RelatedLinks",
+ CellID->142464775]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[81833, 1946, 25, 0, 136, "AuthorSection"],
+Cell[81861, 1948, 388, 11, 22, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

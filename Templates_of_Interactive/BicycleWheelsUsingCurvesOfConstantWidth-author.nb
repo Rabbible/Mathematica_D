@@ -1,0 +1,3282 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    146708,       3273]
+NotebookOptionsPosition[    142285,       3136]
+NotebookOutlinePosition[    143906,       3187]
+CellTagsIndexPosition[    143570,       3175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Bicycle Wheels Using Curves of Constant Width", "DemoTitle",
+ CellChangeTimes->{{3.597163791803875*^9, 3.5971638031945*^9}, {
+  3.597960212104755*^9, 3.5979602169403343`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "a", ",", "t"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"r", "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"r", "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"a", "^", "2"}], "-", "1"}], ")"}]}], ")"}], 
+          RowBox[{"Sin", "[", 
+           RowBox[{"a", " ", "t"}], "]"}]}]}], ")"}], 
+       RowBox[{"Cos", "[", "t", "]"}]}], " ", "-", 
+      RowBox[{"a", 
+       RowBox[{"(", 
+        RowBox[{"r", "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"a", "^", "2"}], "-", "1"}], ")"}]}], ")"}], " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"a", " ", "t"}], "]"}], 
+       RowBox[{"Sin", "[", "t", "]"}]}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "=", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "a", ",", "t"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"r", "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"r", "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"a", "^", "2"}], "-", "1"}], ")"}]}], ")"}], 
+          RowBox[{"Sin", "[", 
+           RowBox[{"a", " ", "t"}], "]"}]}]}], ")"}], 
+       RowBox[{"Sin", "[", "t", "]"}]}], " ", "+", " ", 
+      RowBox[{"a", 
+       RowBox[{"(", 
+        RowBox[{"r", "/", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"a", "^", "2"}], "-", "1"}], ")"}]}], ")"}], 
+       RowBox[{"Cos", "[", 
+        RowBox[{"a", " ", "t"}], "]"}], 
+       RowBox[{"Cos", "[", "t", "]"}]}]}]}], "]"}]}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.59716385735075*^9, 3.5971638665695*^9}, 
+   3.5974059725533543`*^9, 3.597752794134244*^9},
+ CellID->251697516]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r", "=", ".5"}], ",", 
+       RowBox[{"d", "=", "1.8"}], ",", "points1", ",", "points2", ",", 
+       "curve1points", ",", "curve2points", ",", "centerpoints"}], "}"}], ",",
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"points1", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"r", "*", "theta"}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", "t"}], "]"}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a1", ",", "t"}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"y", "[", 
+               RowBox[{"r", ",", "a1", ",", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{
+                RowBox[{"3", 
+                 RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a1", ",", "t"}], "]"}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", "t"}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", 
+           RowBox[{"2", "*", "Pi"}], ",", 
+           RowBox[{"Pi", "/", "32"}]}], "}"}]}], "]"}]}], ";", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"points2", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"d", "+", 
+            RowBox[{"r", "*", "theta"}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a2", ",", "t"}], "]"}], "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"Pi", "+", "theta"}], "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a2", ",", "t"}], "]"}], "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"Pi", "+", "theta"}], "]"}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"y", "[", 
+               RowBox[{"r", ",", "a2", ",", 
+                RowBox[{
+                 RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}]}], "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"Pi", "+", "theta"}], "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a2", ",", 
+               RowBox[{
+                RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"Pi", "+", "theta"}], "]"}]}], " ", "+", " ", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a2", ",", "t"}], "]"}], "*", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"Pi", "+", "theta"}], "]"}]}], "-", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a2", ",", "t"}], "]"}], "*", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"Pi", "+", "theta"}], "]"}]}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", 
+           RowBox[{"2", "*", "Pi"}], ",", 
+           RowBox[{"Pi", "/", "32"}]}], "}"}]}], "]"}]}], ";", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"curve1points", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"r", "*", "theta"}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"3", 
+                RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"3", 
+                RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"y", "[", 
+               RowBox[{"r", ",", "a1", ",", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{
+                RowBox[{"3", 
+                 RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"3", 
+                RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"3", 
+                RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"theta", ",", 
+           RowBox[{"-", "Pi"}], ",", 
+           RowBox[{"3", "*", "Pi"}], ",", 
+           RowBox[{"Pi", "/", "32"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"curve2points", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"r", "*", "theta"}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"y", "[", 
+               RowBox[{"r", ",", "a1", ",", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{
+                RowBox[{"3", 
+                 RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+            RowBox[{
+             RowBox[{"y", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"theta", ",", 
+           RowBox[{
+            RowBox[{"-", "Pi"}], "/", "2"}], ",", 
+           RowBox[{"3", "*", "Pi"}], ",", 
+           RowBox[{"Pi", "/", "32"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"centerpoints", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"r", "*", "theta"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"y", "[", 
+               RowBox[{"r", ",", "a1", ",", 
+                RowBox[{
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], "*", 
+             RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"x", "[", 
+              RowBox[{"r", ",", "a1", ",", 
+               RowBox[{
+                RowBox[{"3", 
+                 RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+             RowBox[{"Sin", "[", "theta", "]"}]}]}]}], " ", "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"theta", ",", 
+           RowBox[{"-", "Pi"}], ",", 
+           RowBox[{"3", "*", "Pi"}], ",", 
+           RowBox[{"Pi", "/", "32"}]}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"centerpoints", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ";;", 
+              RowBox[{"Round", "[", 
+               RowBox[{
+                RowBox[{"32", "*", 
+                 RowBox[{"theta", "/", "Pi"}]}], "+", "33"}], "]"}]}], "]"}], 
+            "]"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "1"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"curve1points", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ";;", 
+              RowBox[{"Round", "[", 
+               RowBox[{
+                RowBox[{"32", "*", 
+                 RowBox[{"theta", "/", "Pi"}]}], "+", "33"}], "]"}]}], "]"}], 
+            "]"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"0", ",", "1", ",", "1"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"curve2points", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ";;", 
+              RowBox[{"Round", "[", 
+               RowBox[{
+                RowBox[{"32", "*", 
+                 RowBox[{"theta", "/", "Pi"}]}], "+", "17"}], "]"}]}], "]"}], 
+            "]"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Thickness", "[", ".005", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", "points1", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", "points2", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Thickness", "[", ".001", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"r", "*", "theta"}], ",", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", 
+                    RowBox[{"y", "[", 
+                    RowBox[{"r", ",", "a1", ",", 
+                    RowBox[{
+                    RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], 
+                   "*", 
+                   RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+                  RowBox[{
+                   RowBox[{"x", "[", 
+                    RowBox[{"r", ",", "a1", ",", 
+                    RowBox[{
+                    RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+                   RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], ",", 
+               RowBox[{"points1", "[", 
+                RowBox[{"[", "k", "]"}], "]"}]}], "}"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", 
+              RowBox[{"Length", "[", "points1", "]"}], ",", "2"}], "}"}]}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"d", "+", 
+                  RowBox[{"r", "*", "theta"}]}], ",", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", 
+                    RowBox[{"y", "[", 
+                    RowBox[{"r", ",", "a2", ",", 
+                    RowBox[{
+                    RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}]}], "*", 
+                   RowBox[{"Cos", "[", 
+                    RowBox[{"Pi", "+", "theta"}], "]"}]}], "+", 
+                  RowBox[{
+                   RowBox[{"x", "[", 
+                    RowBox[{"r", ",", "a2", ",", 
+                    RowBox[{
+                    RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}], "*", 
+                   RowBox[{"Sin", "[", 
+                    RowBox[{"Pi", "+", "theta"}], "]"}]}]}]}], "}"}], ",", 
+               RowBox[{"points2", "[", 
+                RowBox[{"[", "k", "]"}], "]"}]}], "}"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", 
+              RowBox[{"Length", "[", "points2", "]"}], ",", "2"}], "}"}]}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"PointSize", "[", ".005", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"1", ",", "0", ",", "1"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Point", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"r", "*", "theta"}], "+", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+              RowBox[{
+               RowBox[{"y", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"y", "[", 
+                 RowBox[{"r", ",", "a1", ",", 
+                  RowBox[{
+                   RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], 
+               "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{
+                  RowBox[{"3", 
+                   RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+              RowBox[{
+               RowBox[{"y", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"3", 
+                  RowBox[{"Pi", "/", "2"}]}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"0", ",", "1", ",", "1"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Point", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"r", "*", "theta"}], "+", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+              RowBox[{
+               RowBox[{"y", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"y", "[", 
+                 RowBox[{"r", ",", "a1", ",", 
+                  RowBox[{
+                   RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], 
+               "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{
+                  RowBox[{"3", 
+                   RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+              RowBox[{
+               RowBox[{"y", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{"Pi", "/", "2"}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"RGBColor", "[", 
+           RowBox[{"0", ",", "0", ",", "0"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Thickness", "[", ".01", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "r"}], "-", ".1"}], ",", 
+               RowBox[{"-", ".01"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"3", "*", "Pi", "*", "r"}], "+", "d", "+", "r", "+", 
+                ".1"}], ",", 
+               RowBox[{"-", ".01"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", ".1"}], ",", "r"}], "}"}]}],
+             "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2"}], ",", 
+               "r"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2"}], ",", 
+               "r"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".1"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "-", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "-", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "+", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2", "-", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}], ",", 
+               RowBox[{"r", "+", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}]}], "}"}],
+              ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2", "-", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}], "+", 
+                ".1"}], ",", 
+               RowBox[{"r", "+", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}]}], 
+              "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2", "+", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}], ",", 
+               RowBox[{"r", "-", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}]}], "}"}],
+              ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2", "+", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}], "+", 
+                ".1"}], ",", 
+               RowBox[{"r", "-", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}]}], 
+              "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Thickness", "[", ".005", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".1"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r", "*", "theta"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2"}], ",", 
+               "r"}], "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"r", "*", "theta"}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", 
+                  RowBox[{"y", "[", 
+                   RowBox[{"r", ",", "a1", ",", 
+                    RowBox[{
+                    RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], 
+                 "*", 
+                 RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+                RowBox[{
+                 RowBox[{"x", "[", 
+                  RowBox[{"r", ",", "a1", ",", 
+                   RowBox[{
+                    RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+                 RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2"}], ",", 
+               "r"}], "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", ".1"}], ",", "r"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}]}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", 
+                  RowBox[{"y", "[", 
+                   RowBox[{"r", ",", "a2", ",", 
+                    RowBox[{
+                    RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}]}], "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"Pi", "+", "theta"}], "]"}]}], "+", 
+                RowBox[{
+                 RowBox[{"x", "[", 
+                  RowBox[{"r", ",", "a2", ",", 
+                   RowBox[{
+                    RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}], "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"Pi", "+", "theta"}], "]"}]}]}]}], "}"}]}], "}"}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", ".2"}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", ".1"}], ",", "r"}], "}"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}]}], ",", 
+               RowBox[{"2", "*", "r"}]}], "}"}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2"}], ",", 
+               "r"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2", "-", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}], ",", 
+               RowBox[{"r", "+", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}]}], 
+              "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2"}], ",", 
+               "r"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"r", "*", "theta"}], "+", "r", "+", ".2", "+", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Cos", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}], ",", 
+               RowBox[{"r", "-", 
+                RowBox[{".15", "*", 
+                 RowBox[{"Sin", "[", 
+                  RowBox[{"2", "*", 
+                   RowBox[{"(", 
+                    RowBox[{".5", "+", "theta"}], ")"}]}], "]"}]}]}]}], 
+              "}"}]}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".2"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".3"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".3"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".4"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".1"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".3"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".2"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".4"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".4"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "-", ".2"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".4"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".2"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".4"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"d", "+", 
+                RowBox[{"r", "*", "theta"}], "-", "r", "+", ".4"}], ",", 
+               RowBox[{
+                RowBox[{"2", "*", "r"}], "+", ".4"}]}], "}"}]}], "}"}], "]"}],
+           ",", "\[IndentingNewLine]", 
+          RowBox[{"PointSize", "[", ".02", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Point", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"r", "*", "theta"}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"y", "[", 
+                 RowBox[{"r", ",", "a1", ",", 
+                  RowBox[{
+                   RowBox[{"3", 
+                    RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}]}], 
+               "*", 
+               RowBox[{"Cos", "[", "theta", "]"}]}], "+", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a1", ",", 
+                 RowBox[{
+                  RowBox[{"3", 
+                   RowBox[{"Pi", "/", "2"}]}], "+", "theta"}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", "theta", "]"}]}]}]}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Point", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"d", "+", 
+              RowBox[{"r", "*", "theta"}]}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"y", "[", 
+                 RowBox[{"r", ",", "a2", ",", 
+                  RowBox[{
+                   RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}]}], "*", 
+               RowBox[{"Cos", "[", 
+                RowBox[{"Pi", "+", "theta"}], "]"}]}], "+", 
+              RowBox[{
+               RowBox[{"x", "[", 
+                RowBox[{"r", ",", "a2", ",", 
+                 RowBox[{
+                  RowBox[{"Pi", "/", "2"}], "+", "theta"}]}], "]"}], "*", 
+               RowBox[{"Sin", "[", 
+                RowBox[{"Pi", "+", "theta"}], "]"}]}]}]}], "}"}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], ",", 
+        RowBox[{"Axes", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"True", ",", "False"}], "}"}]}], ",", 
+        RowBox[{"Ticks", "\[Rule]", "None"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "r"}], "-", ".1"}], ",", " ", 
+             RowBox[{
+              RowBox[{"2", "*", "Pi", "*", "r"}], "+", "d", "+", "r", "+", 
+              ".1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", 
+             RowBox[{
+              RowBox[{"2", "*", "r"}], "+", "1"}]}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"600", ",", "300"}], "}"}]}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Spacer", "[", "40", "]"}], ",", 
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"theta", ",", "0", ",", "\"\<time\>\""}], "}"}], ",", "0", 
+         ",", 
+         RowBox[{"2", "*", "3.1416"}], ",", ".0001", ",", 
+         RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}]}], 
+     "}"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a1", ",", "3", ",", "\"\<back wheel sides\>\""}], "}"}], 
+         ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"3", ",", "9", ",", "2"}], "]"}]}], "}"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "20", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "@", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"a2", ",", "5", ",", "\"\<front wheel sides\>\""}], "}"}], 
+         ",", 
+         RowBox[{"Range", "[", 
+          RowBox[{"3", ",", "9", ",", "2"}], "]"}]}], "}"}]}]}], 
+     "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.597163898397625*^9, {3.59716457960075*^9, 3.597164591772625*^9}, {
+   3.597166250147625*^9, 3.59716635128825*^9}, 3.59740578462853*^9, {
+   3.5974058374263477`*^9, 3.5974058399598713`*^9}, {3.597405917497531*^9, 
+   3.597405936568056*^9}, {3.5974059762859497`*^9, 3.597406075230969*^9}, {
+   3.5977528186987*^9, 3.59775282019685*^9}, {3.597960041404963*^9, 
+   3.597960186765321*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a1$$ = 3, $CellContext`a2$$ = 
+    5, $CellContext`theta$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`theta$$], 0, "time"}, 0, 6.2832, 0.0001}, {
+      Hold[
+       Row[{
+         Spacer[40], 
+         Manipulate`Place[1]}]], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`a1$$], 3, "back wheel sides"}, {3, 5, 7, 9}}, {{
+       Hold[$CellContext`a2$$], 5, "front wheel sides"}, {3, 5, 7, 9}}, {
+      Hold[
+       Row[{
+         Manipulate`Place[2], 
+         Spacer[20], 
+         Manipulate`Place[3]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {600., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`theta$89248$$ = 0, $CellContext`a1$89249$$ = 
+    0, $CellContext`a2$89250$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`a1$$ = 3, $CellContext`a2$$ = 
+        5, $CellContext`theta$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`theta$$, $CellContext`theta$89248$$, 0], 
+        Hold[$CellContext`a1$$, $CellContext`a1$89249$$, 0], 
+        Hold[$CellContext`a2$$, $CellContext`a2$89250$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r$ = 0.5, $CellContext`d$ = 
+         1.8, $CellContext`points1$, $CellContext`points2$, \
+$CellContext`curve1points$, $CellContext`curve2points$, \
+$CellContext`centerpoints$}, $CellContext`points1$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+            Sin[$CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`points2$ = 
+         Table[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Sin[Pi + $CellContext`theta$$], \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$]) 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, Pi/2 + $CellContext`theta$$] 
+             Sin[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+            Sin[Pi + $CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`curve1points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; $CellContext`curve2points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, (-Pi)/2, 3 Pi, 
+            Pi/32}]; $CellContext`centerpoints$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; Graphics[{
+           RGBColor[1, 0, 0], 
+           Line[
+            Part[$CellContext`centerpoints$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[1, 0, 1], 
+           Line[
+            Part[$CellContext`curve1points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[0, 1, 1], 
+           Line[
+            Part[$CellContext`curve2points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 17]]]], 
+           RGBColor[0, 0, 1], 
+           Thickness[0.005], 
+           Line[$CellContext`points1$], 
+           Line[$CellContext`points2$], 
+           Thickness[0.001], 
+           Table[
+            
+            Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                   3 (Pi/2) + $CellContext`theta$$]) 
+                Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+                Sin[$CellContext`theta$$]}, 
+              Part[$CellContext`points1$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points1$], 2}], 
+           Table[
+            
+            Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                   Pi/2 + $CellContext`theta$$]) 
+                Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$] 
+                Sin[Pi + $CellContext`theta$$]}, 
+              Part[$CellContext`points2$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points2$], 2}], 
+           PointSize[0.005], 
+           RGBColor[1, 0, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 1, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 0, 0], 
+           Thickness[0.01], 
+           
+           Line[{{-$CellContext`r$ - 
+              0.1, -0.01}, {(3 
+                Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+              0.1, -0.01}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - $CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ - 
+              0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ - 0.2,
+               2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.2, 
+              2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ + 0.2, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 - 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[
+                2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 + 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[
+               2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           Thickness[0.005], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                  3 (Pi/2) + $CellContext`theta$$]) 
+               Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+               Sin[$CellContext`theta$$]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, (-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$]) 
+               Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$] 
+               Sin[Pi + $CellContext`theta$$]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - 0.2, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.3}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ - 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.4, 2 $CellContext`r$ + 0.4}}], 
+           PointSize[0.02], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$]}], 
+           
+           Point[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$]) 
+              Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$] 
+              Sin[Pi + $CellContext`theta$$]}]}, Axes -> {True, False}, Ticks -> 
+          None, PlotRange -> {{-$CellContext`r$ - 
+             0.1, (2 Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+             0.1}, {0, 2 $CellContext`r$ + 1}}, ImageSize -> {600, 300}]], 
+      "Specifications" :> {{{$CellContext`theta$$, 0, "time"}, 0, 6.2832, 
+         0.0001, Appearance -> "Labeled", ControlPlacement -> 1}, 
+        Row[{
+          Spacer[40], 
+          Manipulate`Place[1]}], {{$CellContext`a1$$, 3, 
+          "back wheel sides"}, {3, 5, 7, 9}, ControlPlacement -> 
+         2}, {{$CellContext`a2$$, 5, "front wheel sides"}, {3, 5, 7, 9}, 
+         ControlPlacement -> 3}, 
+        Row[{
+          Manipulate`Place[2], 
+          Spacer[20], 
+          Manipulate`Place[3]}]}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{643., {204., 209.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`x = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t] - (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+         Sin[$CellContext`t]], $CellContext`y = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          Sin[$CellContext`t] + (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.5979598684946413`*^9, {3.5979600723345003`*^9, 3.5979601038888474`*^9}, {
+   3.597960135360383*^9, 3.5979601876368093`*^9}},
+ CellID->10321242]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+Curves of constant width are planar curves that maintain the same width and \
+height when rotated. Such curves can be created using any odd number of sides \
+between three and infinity, and include Reuleaux triangles and circles. When \
+rolled as wheels of a bicycle, curves of constant width provide a uniform \
+ride as long as the rider is supported by the top of each wheel rather than \
+by the center, as in traditional bicycles. The only known physical bicycle \
+using curves of constant width was created by Guan Baihua in China. Curves \
+are shown to trace the locations of two points on the back wheel as well as \
+the center of the back wheel over time.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{{3.597165339257*^9, 3.597165347053875*^9}, {
+  3.59716538266325*^9, 3.597165543741375*^9}, {3.597165622616375*^9, 
+  3.597165645772625*^9}, {3.597165780585125*^9, 3.59716585266325*^9}, {
+  3.59716658260075*^9, 3.59716658903825*^9}, {3.59775311522535*^9, 
+  3.5977531157193995`*^9}, {3.5979598831080933`*^9, 3.597959910039193*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a1$$ = 3, $CellContext`a2$$ = 
+    5, $CellContext`theta$$ = 5.076813728201106, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`theta$$], 2.0231856689118266`, "time"}, 0, 2 Pi}, {{
+       Hold[$CellContext`a1$$], 3, "back wheel sides"}, 3, 9, 2}, {{
+       Hold[$CellContext`a2$$], 5, "front wheel sides"}, 3, 9, 2}}, 
+    Typeset`size$$ = {600., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`theta$896$$ = 0, $CellContext`a1$897$$ = 
+    0, $CellContext`a2$898$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a1$$ = 3, $CellContext`a2$$ = 
+        5, $CellContext`theta$$ = 2.0231856689118266`}, "ControllerVariables" :> {
+        Hold[$CellContext`theta$$, $CellContext`theta$896$$, 0], 
+        Hold[$CellContext`a1$$, $CellContext`a1$897$$, 0], 
+        Hold[$CellContext`a2$$, $CellContext`a2$898$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r$ = 0.5, $CellContext`d$ = 
+         1.8, $CellContext`points1$, $CellContext`points2$, \
+$CellContext`curve1points$, $CellContext`curve2points$, \
+$CellContext`centerpoints$}, $CellContext`points1$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+            Sin[$CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`points2$ = 
+         Table[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Sin[Pi + $CellContext`theta$$], \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$]) 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, Pi/2 + $CellContext`theta$$] 
+             Sin[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+            Sin[Pi + $CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`curve1points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; $CellContext`curve2points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, (-Pi)/2, 3 Pi, 
+            Pi/32}]; $CellContext`centerpoints$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; Graphics[{
+           RGBColor[1, 0, 0], 
+           Line[
+            Part[$CellContext`centerpoints$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[1, 0, 1], 
+           Line[
+            Part[$CellContext`curve1points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[0, 1, 1], 
+           Line[
+            Part[$CellContext`curve2points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 17]]]], 
+           RGBColor[0, 0, 1], 
+           Thickness[0.005], 
+           Line[$CellContext`points1$], 
+           Line[$CellContext`points2$], 
+           Thickness[0.001], 
+           Table[
+            
+            Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                   3 (Pi/2) + $CellContext`theta$$]) 
+                Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+                Sin[$CellContext`theta$$]}, 
+              Part[$CellContext`points1$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points1$], 2}], 
+           Table[
+            
+            Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                   Pi/2 + $CellContext`theta$$]) 
+                Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$] 
+                Sin[Pi + $CellContext`theta$$]}, 
+              Part[$CellContext`points2$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points2$], 2}], 
+           PointSize[0.005], 
+           RGBColor[1, 0, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 1, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 0, 0], 
+           Thickness[0.01], 
+           
+           Line[{{-$CellContext`r$ - 
+              0.1, -0.01}, {(3 
+                Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+              0.1, -0.01}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - $CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ - 
+              0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ - 0.2,
+               2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.2, 2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ + 0.2, 2 $CellContext`r$}}], 
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 - 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[
+                2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 + 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[
+               2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           Thickness[0.005], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                  3 (Pi/2) + $CellContext`theta$$]) 
+               Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+               Sin[$CellContext`theta$$]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, (-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$]) 
+               Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$] 
+               Sin[Pi + $CellContext`theta$$]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - 0.2, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.3}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ - 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.4, 2 $CellContext`r$ + 0.4}}], 
+           PointSize[0.02], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$]}], 
+           
+           Point[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$]) 
+              Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$] 
+              Sin[Pi + $CellContext`theta$$]}]}, Axes -> {True, False}, Ticks -> 
+          None, PlotRange -> {{-$CellContext`r$ - 
+             0.1, (2 Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+             0.1}, {0, 2 $CellContext`r$ + 1}}, ImageSize -> {600, 300}]], 
+      "Specifications" :> {{{$CellContext`theta$$, 2.0231856689118266`, 
+          "time"}, 0, 2 Pi}, {{$CellContext`a1$$, 3, "back wheel sides"}, 3, 
+         9, 2}, {{$CellContext`a2$$, 5, "front wheel sides"}, 3, 9, 2}}, 
+      "Options" :> {}, "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{643., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`x = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t] - (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+         Sin[$CellContext`t]], $CellContext`y = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          
+          Sin[$CellContext`t] + (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->387904113]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a1$$ = 5, $CellContext`a2$$ = 
+    3, $CellContext`theta$$ = 6.283185307179586, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`theta$$], 6.283185307179586, "time"}, 0, 2 Pi}, {{
+       Hold[$CellContext`a1$$], 5, "back wheel sides"}, 3, 9, 2}, {{
+       Hold[$CellContext`a2$$], 3, "front wheel sides"}, 3, 9, 2}}, 
+    Typeset`size$$ = {600., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`theta$959$$ = 0, $CellContext`a1$960$$ = 
+    0, $CellContext`a2$961$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a1$$ = 5, $CellContext`a2$$ = 
+        3, $CellContext`theta$$ = 6.283185307179586}, "ControllerVariables" :> {
+        Hold[$CellContext`theta$$, $CellContext`theta$959$$, 0], 
+        Hold[$CellContext`a1$$, $CellContext`a1$960$$, 0], 
+        Hold[$CellContext`a2$$, $CellContext`a2$961$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r$ = 0.5, $CellContext`d$ = 
+         1.8, $CellContext`points1$, $CellContext`points2$, \
+$CellContext`curve1points$, $CellContext`curve2points$, \
+$CellContext`centerpoints$}, $CellContext`points1$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+            Sin[$CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`points2$ = 
+         Table[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Sin[Pi + $CellContext`theta$$], \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$]) 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, Pi/2 + $CellContext`theta$$] 
+             Sin[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+            Sin[Pi + $CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`curve1points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; $CellContext`curve2points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, (-Pi)/2, 3 Pi, 
+            Pi/32}]; $CellContext`centerpoints$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; Graphics[{
+           RGBColor[1, 0, 0], 
+           Line[
+            Part[$CellContext`centerpoints$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[1, 0, 1], 
+           Line[
+            Part[$CellContext`curve1points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[0, 1, 1], 
+           Line[
+            Part[$CellContext`curve2points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 17]]]], 
+           RGBColor[0, 0, 1], 
+           Thickness[0.005], 
+           Line[$CellContext`points1$], 
+           Line[$CellContext`points2$], 
+           Thickness[0.001], 
+           Table[
+            
+            Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                   3 (Pi/2) + $CellContext`theta$$]) 
+                Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+                Sin[$CellContext`theta$$]}, 
+              Part[$CellContext`points1$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points1$], 2}], 
+           Table[
+            
+            Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                   Pi/2 + $CellContext`theta$$]) 
+                Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$] 
+                Sin[Pi + $CellContext`theta$$]}, 
+              Part[$CellContext`points2$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points2$], 2}], 
+           PointSize[0.005], 
+           RGBColor[1, 0, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 1, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 0, 0], 
+           Thickness[0.01], 
+           
+           Line[{{-$CellContext`r$ - 
+              0.1, -0.01}, {(3 
+                Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+              0.1, -0.01}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - $CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ - 
+              0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ - 0.2,
+               2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.2, 2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ + 0.2, 2 $CellContext`r$}}], 
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 - 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[
+                2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 + 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[
+               2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           Thickness[0.005], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                  3 (Pi/2) + $CellContext`theta$$]) 
+               Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+               Sin[$CellContext`theta$$]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, (-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$]) 
+               Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$] 
+               Sin[Pi + $CellContext`theta$$]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - 0.2, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.3}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ - 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.4, 2 $CellContext`r$ + 0.4}}], 
+           PointSize[0.02], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$]}], 
+           
+           Point[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$]) 
+              Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$] 
+              Sin[Pi + $CellContext`theta$$]}]}, Axes -> {True, False}, Ticks -> 
+          None, PlotRange -> {{-$CellContext`r$ - 
+             0.1, (2 Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+             0.1}, {0, 2 $CellContext`r$ + 1}}, ImageSize -> {600, 300}]], 
+      "Specifications" :> {{{$CellContext`theta$$, 6.283185307179586, "time"},
+          0, 2 Pi}, {{$CellContext`a1$$, 5, "back wheel sides"}, 3, 9, 
+         2}, {{$CellContext`a2$$, 3, "front wheel sides"}, 3, 9, 2}}, 
+      "Options" :> {}, "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{643., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`x = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t] - (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+         Sin[$CellContext`t]], $CellContext`y = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          
+          Sin[$CellContext`t] + (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->147573351],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a1$$ = 9, $CellContext`a2$$ = 
+    3, $CellContext`theta$$ = 3.656813848778519, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`theta$$], 3.656813848778519, "time"}, 0, 2 Pi}, {{
+       Hold[$CellContext`a1$$], 9, "back wheel sides"}, 3, 9, 2}, {{
+       Hold[$CellContext`a2$$], 3, "front wheel sides"}, 3, 9, 2}}, 
+    Typeset`size$$ = {600., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`theta$1022$$ = 0, $CellContext`a1$1023$$ = 
+    0, $CellContext`a2$1024$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a1$$ = 9, $CellContext`a2$$ = 
+        3, $CellContext`theta$$ = 3.656813848778519}, "ControllerVariables" :> {
+        Hold[$CellContext`theta$$, $CellContext`theta$1022$$, 0], 
+        Hold[$CellContext`a1$$, $CellContext`a1$1023$$, 0], 
+        Hold[$CellContext`a2$$, $CellContext`a2$1024$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r$ = 0.5, $CellContext`d$ = 
+         1.8, $CellContext`points1$, $CellContext`points2$, \
+$CellContext`curve1points$, $CellContext`curve2points$, \
+$CellContext`centerpoints$}, $CellContext`points1$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+            Sin[$CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`points2$ = 
+         Table[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Sin[Pi + $CellContext`theta$$], \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$]) 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, Pi/2 + $CellContext`theta$$] 
+             Sin[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+            Sin[Pi + $CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`curve1points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; $CellContext`curve2points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, (-Pi)/2, 3 Pi, 
+            Pi/32}]; $CellContext`centerpoints$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; Graphics[{
+           RGBColor[1, 0, 0], 
+           Line[
+            Part[$CellContext`centerpoints$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[1, 0, 1], 
+           Line[
+            Part[$CellContext`curve1points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[0, 1, 1], 
+           Line[
+            Part[$CellContext`curve2points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 17]]]], 
+           RGBColor[0, 0, 1], 
+           Thickness[0.005], 
+           Line[$CellContext`points1$], 
+           Line[$CellContext`points2$], 
+           Thickness[0.001], 
+           Table[
+            
+            Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                   3 (Pi/2) + $CellContext`theta$$]) 
+                Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+                Sin[$CellContext`theta$$]}, 
+              Part[$CellContext`points1$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points1$], 2}], 
+           Table[
+            
+            Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                   Pi/2 + $CellContext`theta$$]) 
+                Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$] 
+                Sin[Pi + $CellContext`theta$$]}, 
+              Part[$CellContext`points2$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points2$], 2}], 
+           PointSize[0.005], 
+           RGBColor[1, 0, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 1, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 0, 0], 
+           Thickness[0.01], 
+           
+           Line[{{-$CellContext`r$ - 
+              0.1, -0.01}, {(3 
+                Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+              0.1, -0.01}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - $CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ - 
+              0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ - 0.2,
+               2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.2, 2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ + 0.2, 2 $CellContext`r$}}], 
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 - 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[
+                2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 + 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[
+               2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           Thickness[0.005], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                  3 (Pi/2) + $CellContext`theta$$]) 
+               Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+               Sin[$CellContext`theta$$]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, (-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$]) 
+               Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$] 
+               Sin[Pi + $CellContext`theta$$]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - 0.2, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.3}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ - 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.4, 2 $CellContext`r$ + 0.4}}], 
+           PointSize[0.02], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$]}], 
+           
+           Point[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$]) 
+              Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$] 
+              Sin[Pi + $CellContext`theta$$]}]}, Axes -> {True, False}, Ticks -> 
+          None, PlotRange -> {{-$CellContext`r$ - 
+             0.1, (2 Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+             0.1}, {0, 2 $CellContext`r$ + 1}}, ImageSize -> {600, 300}]], 
+      "Specifications" :> {{{$CellContext`theta$$, 3.656813848778519, "time"},
+          0, 2 Pi}, {{$CellContext`a1$$, 9, "back wheel sides"}, 3, 9, 
+         2}, {{$CellContext`a2$$, 3, "front wheel sides"}, 3, 9, 2}}, 
+      "Options" :> {}, "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{643., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`x = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t] - (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+         Sin[$CellContext`t]], $CellContext`y = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          
+          Sin[$CellContext`t] + (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->357774498],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a1$$ = 3, $CellContext`a2$$ = 
+    7, $CellContext`theta$$ = 0.5277875658030853, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`theta$$], 0.5277875658030853, "time"}, 0, 2 Pi}, {{
+       Hold[$CellContext`a1$$], 3, "back wheel sides"}, 3, 9, 2}, {{
+       Hold[$CellContext`a2$$], 7, "front wheel sides"}, 3, 9, 2}}, 
+    Typeset`size$$ = {600., {148., 152.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`theta$1085$$ = 0, $CellContext`a1$1086$$ = 
+    0, $CellContext`a2$1087$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a1$$ = 3, $CellContext`a2$$ = 
+        7, $CellContext`theta$$ = 0.5277875658030853}, "ControllerVariables" :> {
+        Hold[$CellContext`theta$$, $CellContext`theta$1085$$, 0], 
+        Hold[$CellContext`a1$$, $CellContext`a1$1086$$, 0], 
+        Hold[$CellContext`a2$$, $CellContext`a2$1087$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r$ = 0.5, $CellContext`d$ = 
+         1.8, $CellContext`points1$, $CellContext`points2$, \
+$CellContext`curve1points$, $CellContext`curve2points$, \
+$CellContext`centerpoints$}, $CellContext`points1$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, $CellContext`t] 
+            Sin[$CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`points2$ = 
+         Table[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Sin[Pi + $CellContext`theta$$], \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$]) 
+             Cos[Pi + $CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, Pi/2 + $CellContext`theta$$] 
+             Sin[Pi + $CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+             Cos[Pi + $CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a2$$, $CellContext`t] 
+            Sin[Pi + $CellContext`theta$$]}, {$CellContext`t, 0, 2 Pi, Pi/
+            32}]; $CellContext`curve1points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; $CellContext`curve2points$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+             Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+            Sin[$CellContext`theta$$]}, {$CellContext`theta$$, (-Pi)/2, 3 Pi, 
+            Pi/32}]; $CellContext`centerpoints$ = 
+         Table[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                3 (Pi/2) + $CellContext`theta$$]) 
+             Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+             Sin[$CellContext`theta$$]}, {$CellContext`theta$$, -Pi, 3 Pi, Pi/
+            32}]; Graphics[{
+           RGBColor[1, 0, 0], 
+           Line[
+            Part[$CellContext`centerpoints$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[1, 0, 1], 
+           Line[
+            Part[$CellContext`curve1points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 33]]]], 
+           RGBColor[0, 1, 1], 
+           Line[
+            Part[$CellContext`curve2points$, 
+             Span[1, 
+              Round[32 ($CellContext`theta$$/Pi) + 17]]]], 
+           RGBColor[0, 0, 1], 
+           Thickness[0.005], 
+           Line[$CellContext`points1$], 
+           Line[$CellContext`points2$], 
+           Thickness[0.001], 
+           Table[
+            
+            Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                   3 (Pi/2) + $CellContext`theta$$]) 
+                Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+                Sin[$CellContext`theta$$]}, 
+              Part[$CellContext`points1$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points1$], 2}], 
+           Table[
+            
+            Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                   Pi/2 + $CellContext`theta$$]) 
+                Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$] 
+                Sin[Pi + $CellContext`theta$$]}, 
+              Part[$CellContext`points2$, $CellContext`k]}], {$CellContext`k, 
+             1, 
+             Length[$CellContext`points2$], 2}], 
+           PointSize[0.005], 
+           RGBColor[1, 0, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2)] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 1, 1], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`x[$CellContext`r$, $CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Sin[$CellContext`theta$$], (-$CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$]) 
+              
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$] + $CellContext`y[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] 
+              Cos[$CellContext`theta$$] - $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, Pi/2] Sin[$CellContext`theta$$]}], 
+           RGBColor[0, 0, 0], 
+           Thickness[0.01], 
+           
+           Line[{{-$CellContext`r$ - 
+              0.1, -0.01}, {(3 
+                Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+              0.1, -0.01}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - $CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ - 
+              0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.1, 2 $CellContext`r$ + 0.2}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ - 0.2,
+               2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.2, 2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ + 0.2, 2 $CellContext`r$}}], 
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 - 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[
+                2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2 + 0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[
+               2 (0.5 + $CellContext`theta$$)]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)] + 0.1, $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           Thickness[0.005], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.1, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, 
+              2 $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                  3 (Pi/2) + $CellContext`theta$$]) 
+               Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+               Sin[$CellContext`theta$$]}, {$CellContext`r$ \
+$CellContext`theta$$ + $CellContext`r$ + 0.2, $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, (-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                  Pi/2 + $CellContext`theta$$]) 
+               Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$] 
+               Sin[Pi + $CellContext`theta$$]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 
+              2 $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$ - 0.2, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - 
+              0.1, $CellContext`r$}, {$CellContext`d$ + $CellContext`r$ \
+$CellContext`theta$$, 2 $CellContext`r$}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 - 0.15 
+              Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ + 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`r$ $CellContext`theta$$ + $CellContext`r$ + 
+              0.2, $CellContext`r$}, {$CellContext`r$ $CellContext`theta$$ + \
+$CellContext`r$ + 0.2 + 
+              0.15 Cos[2 (0.5 + $CellContext`theta$$)], $CellContext`r$ - 
+              0.15 Sin[2 (0.5 + $CellContext`theta$$)]}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.2}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 0.3}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.1, 2 $CellContext`r$ + 
+              0.3}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ - 0.2, 2 $CellContext`r$ + 0.4}}], 
+           
+           Line[{{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.2, 2 $CellContext`r$ + 
+              0.4}, {$CellContext`d$ + $CellContext`r$ $CellContext`theta$$ - \
+$CellContext`r$ + 0.4, 2 $CellContext`r$ + 0.4}}], 
+           PointSize[0.02], 
+           
+           Point[{$CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a1$$, 
+                 3 (Pi/2) + $CellContext`theta$$]) 
+              Cos[$CellContext`theta$$] + $CellContext`x[$CellContext`r$, \
+$CellContext`a1$$, 3 (Pi/2) + $CellContext`theta$$] 
+              Sin[$CellContext`theta$$]}], 
+           
+           Point[{$CellContext`d$ + $CellContext`r$ $CellContext`theta$$, \
+(-$CellContext`y[$CellContext`r$, $CellContext`a2$$, 
+                 Pi/2 + $CellContext`theta$$]) 
+              Cos[Pi + $CellContext`theta$$] + \
+$CellContext`x[$CellContext`r$, $CellContext`a2$$, 
+                Pi/2 + $CellContext`theta$$] 
+              Sin[Pi + $CellContext`theta$$]}]}, Axes -> {True, False}, Ticks -> 
+          None, PlotRange -> {{-$CellContext`r$ - 
+             0.1, (2 Pi) $CellContext`r$ + $CellContext`d$ + $CellContext`r$ + 
+             0.1}, {0, 2 $CellContext`r$ + 1}}, ImageSize -> {600, 300}]], 
+      "Specifications" :> {{{$CellContext`theta$$, 0.5277875658030853, 
+          "time"}, 0, 2 Pi}, {{$CellContext`a1$$, 3, "back wheel sides"}, 3, 
+         9, 2}, {{$CellContext`a2$$, 7, "front wheel sides"}, 3, 9, 2}}, 
+      "Options" :> {}, "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{643., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`x = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t] - (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+         Sin[$CellContext`t]], $CellContext`y = 
+       Function[{$CellContext`r, $CellContext`a, $CellContext`t}, \
+($CellContext`r + ($CellContext`r/($CellContext`a^2 - 1)) 
+            Sin[$CellContext`a $CellContext`t]) 
+          
+          Sin[$CellContext`t] + (($CellContext`a \
+($CellContext`r/($CellContext`a^2 - 1))) Cos[$CellContext`a $CellContext`t]) 
+          Cos[$CellContext`t]]}; Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->58960825]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell["\<\
+The idea is from [1]. More information about curves of constant width can be \
+found in [2].\
+\>", "DetailNotes",
+ CellChangeTimes->{{3.597165675803875*^9, 3.597165689085125*^9}, {
+  3.597165748397625*^9, 3.59716575997575*^9}, {3.597165885757*^9, 
+  3.597165991585125*^9}, {3.597166031678875*^9, 3.597166066491375*^9}, {
+  3.5977530247072988`*^9, 3.5977530778456125`*^9}, {3.597959990904662*^9, 
+  3.5979599947855167`*^9}},
+ CellID->40870895],
+
+Cell["References", "DetailNotes",
+ CellChangeTimes->{{3.597753000149843*^9, 3.5977530017950077`*^9}},
+ CellID->431226924],
+
+Cell[TextData[{
+ "[1] \"Reuleaux Wheeled Bicycle.\" (Jan 6, 2014) ",
+ ButtonBox["britton.disted.camosun.bc.ca/reuleaux_bike/reuleaux_bike.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://britton.disted.camosun.bc.ca/reuleaux_bike/reuleaux_bike.\
+html"], None},
+  ButtonNote->
+   "http://britton.disted.camosun.bc.ca/reuleaux_bike/reuleaux_bike.html"],
+ "."
+}], "DetailNotes",
+ CellChangeTimes->{{3.59775300581841*^9, 3.5977530368535137`*^9}, {
+  3.598023062821931*^9, 3.5980230637338543`*^9}, {3.598023220820725*^9, 
+  3.598023251539391*^9}},
+ CellID->57486726],
+
+Cell[TextData[{
+ "[2] J. Bryant and C. Sangwin, ",
+ StyleBox["How Round is Your Circle?",
+  FontSlant->"Italic"],
+ ", Princeton, NJ: Princeton University Press, 2011."
+}], "DetailNotes",
+ CellChangeTimes->{{3.597753062740102*^9, 3.597753066214449*^9}},
+ CellID->897119530],
+
+Cell[TextData[{
+ "[3] ",
+ ButtonBox["triangle bicycle",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://www.youtube.com/watch?v=vk7s4PfvCZg"], None},
+  ButtonNote->"https://www.youtube.com/watch?v=vk7s4PfvCZg"]
+}], "DetailNotes",
+ CellChangeTimes->{{3.6540210284177103`*^9, 3.654021031593165*^9}, 
+   3.6540211053034563`*^9},
+ CellID->263654899]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.597752987764605*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.5979600102508707`*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9, 
+  3.59796000913698*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.59716396972575*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["bicycle", "SearchTerms",
+ CellChangeTimes->{{3.597163990585125*^9, 3.59716399116325*^9}},
+ CellID->258440828],
+
+Cell["reulaux triangle", "SearchTerms",
+ CellChangeTimes->{{3.597165272366375*^9, 3.5971652754445*^9}, 
+   3.597171598022625*^9},
+ CellID->9495820],
+
+Cell["curve of constant width", "SearchTerms",
+ CellChangeTimes->{{3.597165272366375*^9, 3.59716528266325*^9}},
+ CellID->101149554],
+
+Cell["constant width", "SearchTerms",
+ CellChangeTimes->{{3.597165272366375*^9, 3.597165287460125*^9}, 
+   3.597165318960125*^9},
+ CellID->46175055]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Curve of Constant Width",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/CurveofConstantWidth.html"], None},
+ ButtonNote->
+  "http://mathworld.wolfram.com/CurveofConstantWidth.html"]], "RelatedLinks",
+ CellChangeTimes->{{3.59716496978825*^9, 3.59716498766325*^9}, {
+  3.597165201757*^9, 3.5971652209445*^9}},
+ CellID->342378303],
+
+Cell[TextData[ButtonBox["Reulaux Triangle",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/ReuleauxTriangle.html"], None},
+ ButtonNote->
+  "http://mathworld.wolfram.com/ReuleauxTriangle.html"]], "RelatedLinks",
+ CellChangeTimes->{{3.59716522503825*^9, 3.59716525285075*^9}},
+ CellID->136794284]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Robert Young",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Robert+Young"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Robert+Young"]
+}], "Author",
+ CellChangeTimes->{{3.59716489847575*^9, 3.597164900007*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1040, 855},
+WindowMargins->{{5, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 6, \
+2015)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[134713, 2918, 353, 9, 29, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[135069, 2929, 678, 16, 29, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[135750, 2947, 340, 11, 29, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[136093, 2960, 637, 15, 29, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[136733, 2977, 887, 22, 29, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[137623, 3001, 392, 10, 29, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[138018, 3013, 1504, 32, 29, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[139525, 3047, 908, 21, 29, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 142662, 3148},
+ {"RotateAndZoomIn3D", 142772, 3151},
+ {"DragLocators", 142883, 3154},
+ {"CreateAndDeleteLocators", 143000, 3157},
+ {"SliderZoom", 143115, 3160},
+ {"GamepadControls", 143222, 3163},
+ {"AutomaticAnimation", 143337, 3166},
+ {"BookmarkAnimation", 143455, 3169}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 181, 2, 76, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[785, 28, 33, 0, 275, "InitializationSection"],
+Cell[821, 30, 1930, 61, 48, "Input",
+ InitializationCell->True,
+ CellID->251697516]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2788, 96, 29, 0, 201, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[2842, 100, 39235, 990, 1291, "Input"],
+Cell[42080, 1092, 18434, 361, 425, "Output",
+ CellID->10321242]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60563, 1459, 36, 0, 181, "ManipulateCaptionSection"],
+Cell[60602, 1461, 1049, 15, 87, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61688, 1481, 28, 0, 179, "ThumbnailSection"],
+Cell[61719, 1483, 17748, 340, 455, "Output",
+ CellID->387904113]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79504, 1828, 28, 0, 149, "SnapshotsSection"],
+Cell[79535, 1830, 17741, 340, 455, "Output",
+ CellID->147573351],
+Cell[97279, 2172, 17747, 340, 455, "Output",
+ CellID->357774498],
+Cell[115029, 2514, 17751, 340, 455, "Output",
+ CellID->58960825]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[132817, 2859, 26, 0, 357, "DetailsSection"],
+Cell[132846, 2861, 452, 9, 23, "DetailNotes",
+ CellID->40870895],
+Cell[133301, 2872, 121, 2, 23, "DetailNotes",
+ CellID->431226924],
+Cell[133425, 2876, 577, 14, 23, "DetailNotes",
+ CellID->57486726],
+Cell[134005, 2892, 272, 7, 23, "DetailNotes",
+ CellID->897119530],
+Cell[134280, 2901, 356, 10, 23, "DetailNotes",
+ CellID->263654899]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[134673, 2916, 37, 0, 131, "ControlSuggestionsSection"],
+Cell[134713, 2918, 353, 9, 29, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[135069, 2929, 678, 16, 29, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[135750, 2947, 340, 11, 29, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[136093, 2960, 637, 15, 29, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[136733, 2977, 887, 22, 29, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[137623, 3001, 392, 10, 29, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[138018, 3013, 1504, 32, 29, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[139525, 3047, 908, 21, 29, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[140470, 3073, 30, 0, 165, "SearchTermsSection"],
+Cell[140503, 3075, 115, 2, 23, "SearchTerms",
+ CellID->258440828],
+Cell[140621, 3079, 147, 3, 23, "SearchTerms",
+ CellID->9495820],
+Cell[140771, 3084, 131, 2, 23, "SearchTerms",
+ CellID->101149554],
+Cell[140905, 3088, 148, 3, 23, "SearchTerms",
+ CellID->46175055]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[141090, 3096, 31, 0, 149, "RelatedLinksSection"],
+Cell[141124, 3098, 383, 8, 23, "RelatedLinks",
+ CellID->342378303],
+Cell[141510, 3108, 324, 7, 23, "RelatedLinks",
+ CellID->136794284]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[141871, 3120, 25, 0, 149, "AuthorSection"],
+Cell[141899, 3122, 358, 10, 23, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

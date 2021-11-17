@@ -1,0 +1,855 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     32765,        846]
+NotebookOptionsPosition[     28774,        721]
+NotebookOutlinePosition[     30379,        772]
+CellTagsIndexPosition[     30059,        760]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Action of a Siphon", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4314661193013153`*^9, 3.431466190535673*^9}, {
+   3.431466290129525*^9, 3.4314662980065002`*^9}, {3.431466332588471*^9, 
+   3.4314663371917133`*^9}, {3.431466420637793*^9, 3.4314664261938753`*^9}, {
+   3.431466735496385*^9, 3.4314667390277987`*^9}, {3.43146707255057*^9, 
+   3.431467073849069*^9}, {3.431467354179138*^9, 3.431467382904709*^9}, {
+   3.43146781784454*^9, 3.4314678215911827`*^9}, {3.4314678530447903`*^9, 
+   3.431467856904193*^9}, {3.431467928765294*^9, 3.4314679371925383`*^9}, {
+   3.4314680900681334`*^9, 3.431468102797456*^9}, {3.431468331277252*^9, 
+   3.43146834162081*^9}, {3.4314684362303467`*^9, 3.4314684425576077`*^9}, {
+   3.44579160464196*^9, 3.4457916095493097`*^9}, {3.445792282054659*^9, 
+   3.445792282223221*^9}, {3.445964034967059*^9, 3.445964039667074*^9}, {
+   3.4459752140710278`*^9, 3.4459752153740396`*^9}, {3.445975877209337*^9, 
+   3.4459759036668377`*^9}, {3.44597667867208*^9, 3.445976741110787*^9}, {
+   3.445977078950376*^9, 3.4459770845210247`*^9}, {3.4459880310763807`*^9, 
+   3.4459880375242147`*^9}, {3.445988224991836*^9, 3.4459882297223454`*^9}, {
+   3.445988324541171*^9, 3.445988326669694*^9}, {3.4463874129452133`*^9, 
+   3.446387416254253*^9}}],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Opacity", "[", ".75", "]"}], ",", 
+       RowBox[{"CapForm", "[", "None", "]"}], ",", 
+       RowBox[{"EdgeForm", "[", "]"}], ",", 
+       RowBox[{"Tube", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", "0", ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", "0", ",", "5"}], "}"}]}], "}"}], ",", 
+         ".75"}], "]"}], ",", 
+       RowBox[{"Tube", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "h"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"1", "+", "h"}]}], "}"}]}], "}"}], ",", ".75"}], "]"}], 
+       ",", "Blue", ",", 
+       RowBox[{"Opacity", "[", ".5", "]"}], ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", "0", ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", "0", ",", 
+             RowBox[{"5", "-", "t"}]}], "}"}]}], "}"}], ",", ".75"}], "]"}], 
+       ",", 
+       RowBox[{"Cylinder", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "h"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", 
+             RowBox[{"h", "+", "t"}]}], "}"}]}], "}"}], ",", ".75"}], "]"}], 
+       ",", 
+       RowBox[{"Tube", "[", 
+        RowBox[{"BSplineCurve", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", "0", ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2"}], ",", "0", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.65"}], ",", "0", ",", "5.65"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", "0", ",", "6"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", ".35"}], ",", "0", ",", "5.5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "5"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "h"}], "}"}]}], "}"}], "]"}], "]"}]}],
+       "}"}], ",", 
+     RowBox[{"Boxed", "\[Rule]", "False"}], ",", 
+     RowBox[{"SphericalRegion", "\[Rule]", "True"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0.35", ",", "\"\<flow\>\""}], "}"}], ",", "0.05", 
+     ",", ".95", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", "0", ",", "\"\<height\>\""}], "}"}], ",", "0", ",", 
+     "3.1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.445785530731461*^9, 3.445785620388775*^9}, {
+   3.445785812854082*^9, 3.445785813803268*^9}, {3.4457861886327953`*^9, 
+   3.445786190655737*^9}, {3.445789282007806*^9, 3.445789310814546*^9}, {
+   3.4460293724589443`*^9, 3.4460294165955667`*^9}, {3.446029511534123*^9, 
+   3.446029741402363*^9}, {3.446029791989677*^9, 3.4460299276750298`*^9}, {
+   3.446029985647539*^9, 3.446030013453273*^9}, {3.4460300527716513`*^9, 
+   3.446030196566106*^9}, {3.44603233613937*^9, 3.44603234365792*^9}, {
+   3.446038629787807*^9, 3.4460387666766233`*^9}, {3.446038823544676*^9, 
+   3.4460388547908783`*^9}, {3.4460389737017927`*^9, 3.446039003569408*^9}, {
+   3.446039184621955*^9, 3.446039184921278*^9}, {3.4460392269921093`*^9, 
+   3.4460392420796013`*^9}, 3.4460393050321913`*^9, {3.4460393418833513`*^9, 
+   3.4460394217775927`*^9}, 3.4463795862775397`*^9, {3.446561661769189*^9, 
+   3.446561665188313*^9}, 3.4465750387931395`*^9, 3.446576016627062*^9},
+ CellID->40083349],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 0, $CellContext`t$$ = 0.95, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0.35, "flow"}, 0.05, 0.95}, {{
+       Hold[$CellContext`h$$], 0, "height"}, 0, 3.1}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$616$$ = 
+    0, $CellContext`h$617$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0, $CellContext`t$$ = 0.35}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$616$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$617$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.75], 
+         CapForm[None], 
+         EdgeForm[], 
+         Tube[{{-2, 0, 4}, {-2, 0, 5}}, 0.75], 
+         Tube[{{0, 0, $CellContext`h$$}, {0, 0, 1 + $CellContext`h$$}}, 0.75],
+          Blue, 
+         Opacity[0.5], 
+         Cylinder[{{-2, 0, 4}, {-2, 0, 5 - $CellContext`t$$}}, 0.75], 
+         Cylinder[{{0, 0, $CellContext`h$$}, {
+           0, 0, $CellContext`h$$ + $CellContext`t$$}}, 0.75], 
+         Tube[
+          
+          BSplineCurve[{{-2, 0, 4}, {-2, 0, 5}, {-1.65, 0, 5.65}, {-1, 0, 
+            6}, {-0.35, 0, 5.5}, {0, 0, 5}, {0, 0, $CellContext`h$$}}]]}, 
+        Boxed -> False, SphericalRegion -> True], 
+      "Specifications" :> {{{$CellContext`t$$, 0.35, "flow"}, 0.05, 0.95, 
+         Appearance -> "Labeled"}, {{$CellContext`h$$, 0, "height"}, 0, 3.1, 
+         Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{407., {237., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.35696210375764*^9, 3.4465760199157553`*^9},
+ CellID->1993589909]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+A siphon consists of a tube connecting two containers with liquids at \
+different levels. Once the tube is filled, for example, by suction, the \
+liquid flows into the lower container until the liquid levels are equalized. \
+The driving force is the difference of hydrostatic pressure, as determined by \
+Pascal's principle. The flow rate can be calculated using Bernoulli's \
+equation.  \
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.446034916762782*^9, 3.446035110769848*^9}, {
+   3.446035202384089*^9, 3.446035212575338*^9}, {3.44603537806944*^9, 
+   3.44603547255005*^9}, {3.446035507561356*^9, 3.446035514967407*^9}, {
+   3.4460385716551123`*^9, 3.446038615607231*^9}, {3.446040100383992*^9, 
+   3.446040164909834*^9}, {3.446380478196022*^9, 3.446380546288917*^9}, {
+   3.446380752756819*^9, 3.446380817187291*^9}, {3.446380880115951*^9, 
+   3.446380883859646*^9}, {3.446386971854588*^9, 3.446387104903742*^9}, {
+   3.446387137469199*^9, 3.446387366891368*^9}, {3.446387820206335*^9, 
+   3.4463878251564913`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 3.1, $CellContext`t$$ = 0.05, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0.05, "flow"}, 0.05, 0.95}, {{
+       Hold[$CellContext`h$$], 3.1, "height"}, 0, 3.1}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$485937$$ = 
+    0, $CellContext`h$485938$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 3.1, $CellContext`t$$ = 0.05}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$485937$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$485938$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.75], 
+         CapForm[None], 
+         EdgeForm[], 
+         Tube[{{-2, 0, 4}, {-2, 0, 5}}, 0.75], 
+         Tube[{{0, 0, $CellContext`h$$}, {0, 0, 1 + $CellContext`h$$}}, 0.75],
+          Blue, 
+         Opacity[0.5], 
+         Cylinder[{{-2, 0, 4}, {-2, 0, 5 - $CellContext`t$$}}, 0.75], 
+         Cylinder[{{0, 0, $CellContext`h$$}, {
+           0, 0, $CellContext`h$$ + $CellContext`t$$}}, 0.75], 
+         Tube[
+          
+          BSplineCurve[{{-2, 0, 4}, {-2, 0, 5}, {-1.65, 0, 5.65}, {-1, 0, 
+            6}, {-0.35, 0, 5.5}, {0, 0, 5}, {0, 0, $CellContext`h$$}}]]}, 
+        Boxed -> False, SphericalRegion -> True], 
+      "Specifications" :> {{{$CellContext`t$$, 0.05, "flow"}, 0.05, 
+         0.95}, {{$CellContext`h$$, 3.1, "height"}, 0, 3.1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{407., {237., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->281268975]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 0, $CellContext`t$$ = 0.35, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0.35, "flow"}, 0.05, 0.95}, {{
+       Hold[$CellContext`h$$], 0, "height"}, 0, 3.1}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$485992$$ = 
+    0, $CellContext`h$485993$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0, $CellContext`t$$ = 0.35}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$485992$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$485993$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.75], 
+         CapForm[None], 
+         EdgeForm[], 
+         Tube[{{-2, 0, 4}, {-2, 0, 5}}, 0.75], 
+         Tube[{{0, 0, $CellContext`h$$}, {0, 0, 1 + $CellContext`h$$}}, 0.75],
+          Blue, 
+         Opacity[0.5], 
+         Cylinder[{{-2, 0, 4}, {-2, 0, 5 - $CellContext`t$$}}, 0.75], 
+         Cylinder[{{0, 0, $CellContext`h$$}, {
+           0, 0, $CellContext`h$$ + $CellContext`t$$}}, 0.75], 
+         Tube[
+          
+          BSplineCurve[{{-2, 0, 4}, {-2, 0, 5}, {-1.65, 0, 5.65}, {-1, 0, 
+            6}, {-0.35, 0, 5.5}, {0, 0, 5}, {0, 0, $CellContext`h$$}}]]}, 
+        Boxed -> False, SphericalRegion -> True], 
+      "Specifications" :> {{{$CellContext`t$$, 0.35, "flow"}, 0.05, 
+         0.95}, {{$CellContext`h$$, 0, "height"}, 0, 3.1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{407., {237., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->103632993],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 1.77, $CellContext`t$$ = 0.35, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0.35, "flow"}, 0.05, 0.95}, {{
+       Hold[$CellContext`h$$], 0, "height"}, 0, 3.1}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$486047$$ = 
+    0, $CellContext`h$486048$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0, $CellContext`t$$ = 0.35}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$486047$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$486048$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.75], 
+         CapForm[None], 
+         EdgeForm[], 
+         Tube[{{-2, 0, 4}, {-2, 0, 5}}, 0.75], 
+         Tube[{{0, 0, $CellContext`h$$}, {0, 0, 1 + $CellContext`h$$}}, 0.75],
+          Blue, 
+         Opacity[0.5], 
+         Cylinder[{{-2, 0, 4}, {-2, 0, 5 - $CellContext`t$$}}, 0.75], 
+         Cylinder[{{0, 0, $CellContext`h$$}, {
+           0, 0, $CellContext`h$$ + $CellContext`t$$}}, 0.75], 
+         Tube[
+          
+          BSplineCurve[{{-2, 0, 4}, {-2, 0, 5}, {-1.65, 0, 5.65}, {-1, 0, 
+            6}, {-0.35, 0, 5.5}, {0, 0, 5}, {0, 0, $CellContext`h$$}}]]}, 
+        Boxed -> False, SphericalRegion -> True], 
+      "Specifications" :> {{{$CellContext`t$$, 0.35, "flow"}, 0.05, 
+         0.95}, {{$CellContext`h$$, 0, "height"}, 0, 3.1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{407., {237., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->248591609],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 2.805, $CellContext`t$$ = 
+    0.8310000000000001, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0.35, "flow"}, 0.05, 0.95}, {{
+       Hold[$CellContext`h$$], 0, "height"}, 0, 3.1}}, Typeset`size$$ = {
+    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$486102$$ = 
+    0, $CellContext`h$486103$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0, $CellContext`t$$ = 0.35}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$486102$$, 0], 
+        Hold[$CellContext`h$$, $CellContext`h$486103$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Opacity[0.75], 
+         CapForm[None], 
+         EdgeForm[], 
+         Tube[{{-2, 0, 4}, {-2, 0, 5}}, 0.75], 
+         Tube[{{0, 0, $CellContext`h$$}, {0, 0, 1 + $CellContext`h$$}}, 0.75],
+          Blue, 
+         Opacity[0.5], 
+         Cylinder[{{-2, 0, 4}, {-2, 0, 5 - $CellContext`t$$}}, 0.75], 
+         Cylinder[{{0, 0, $CellContext`h$$}, {
+           0, 0, $CellContext`h$$ + $CellContext`t$$}}, 0.75], 
+         Tube[
+          
+          BSplineCurve[{{-2, 0, 4}, {-2, 0, 5}, {-1.65, 0, 5.65}, {-1, 0, 
+            6}, {-0.35, 0, 5.5}, {0, 0, 5}, {0, 0, $CellContext`h$$}}]]}, 
+        Boxed -> False, SphericalRegion -> True], 
+      "Specifications" :> {{{$CellContext`t$$, 0.35, "flow"}, 0.05, 
+         0.95}, {{$CellContext`h$$, 0, "height"}, 0, 3.1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{407., {237., 242.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->46690140]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell[TextData[{
+ "For a derivation, see the Wikipedia article for ",
+ ButtonBox["Siphon",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://en.wikipedia.org/wiki/Siphon"], None},
+  ButtonNote->"http://en.wikipedia.org/wiki/Siphon"],
+ "."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.446034916762782*^9, 3.446035110769848*^9}, {
+   3.446035202384089*^9, 3.446035212575338*^9}, {3.44603537806944*^9, 
+   3.44603547255005*^9}, {3.446035507561356*^9, 3.446035514967407*^9}, {
+   3.4460385716551123`*^9, 3.4460385808300047`*^9}, {3.4460408455376043`*^9, 
+   3.4460408775251293`*^9}, 3.446041029696259*^9, {3.446042936763852*^9, 
+   3.446042949277494*^9}, {3.446042995242628*^9, 3.446043030639044*^9}, {
+   3.446380585809691*^9, 3.446380585921174*^9}, 3.446387494705679*^9, {
+   3.446387797893098*^9, 3.4463878041314373`*^9}, {3.4469122272903423`*^9, 
+   3.446912244337326*^9}},
+ CellID->873231826]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.431465899025838*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.446379632503162*^9},
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.431465900201296*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["siphon", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4460425195868692`*^9, 3.446042520256715*^9}},
+ CellID->2079111781],
+
+Cell["flow", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.446042742454397*^9, 3.446042742891334*^9}},
+ CellID->1925282930],
+
+Cell["Bernoulli's law", "SearchTerms",
+ CellID->151220104],
+
+Cell["Pascal's principle", "SearchTerms",
+ CellID->659186076]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Bernoulli's Law",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://scienceworld.wolfram.com/physics/BernoullisLaw.html"], None},
+ ButtonNote->
+  "http://scienceworld.wolfram.com/physics/BernoullisLaw.html"]], \
+"RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4387870504837227`*^9, 3.4387870521371202`*^9}, 
+   3.446042593064877*^9, 3.446042683586368*^9, {3.446042745987089*^9, 
+   3.446042761738655*^9}, 3.446387516879771*^9, {3.446387616682486*^9, 
+   3.4463876166849213`*^9}, {3.446912253774886*^9, 3.446912254431141*^9}},
+ CellID->1764186655],
+
+Cell[TextData[ButtonBox["Pascal's Principle",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://scienceworld.wolfram.com/physics/PascalsPrinciple.html"], None},
+ ButtonNote->
+  "http://scienceworld.wolfram.com/physics/PascalsPrinciple.html"]], \
+"RelatedLinks",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.446387668641128*^9, 3.446387692728963*^9}, {
+   3.446912257446785*^9, 3.4469122580092883`*^9}},
+ CellID->378396456]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Enrique Zeleny",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Enrique+Zeleny"]\
+, None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Enrique+Zeleny"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4314659049581413`*^9, 3.4314659079114637`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 681},
+WindowMargins->{{10, Automatic}, {Automatic, 0}},
+Magnification->1.,
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (November 10, 2008)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[21037, 498, 374, 9, 22, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[21414, 509, 740, 17, 22, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[22157, 528, 340, 11, 22, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[22500, 541, 637, 15, 22, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[23140, 558, 844, 21, 22, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[23987, 581, 369, 9, 22, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[24359, 592, 1474, 32, 22, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[25836, 626, 882, 21, 22, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 29168, 733},
+ {"RotateAndZoomIn3D", 29276, 736},
+ {"DragLocators", 29385, 739},
+ {"CreateAndDeleteLocators", 29500, 742},
+ {"SliderZoom", 29613, 745},
+ {"GamepadControls", 29718, 748},
+ {"AutomaticAnimation", 29830, 751},
+ {"BookmarkAnimation", 29946, 754}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 1286, 18, 74, "DemoTitle"],
+Cell[1856, 42, 33, 0, 266, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[1914, 46, 29, 0, 188, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[1968, 50, 4289, 109, 188, "Input",
+ CellID->40083349],
+Cell[6260, 161, 2544, 53, 491, "Output",
+ CellID->1993589909]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8850, 220, 36, 0, 166, "ManipulateCaptionSection"],
+Cell[8889, 222, 1055, 17, 82, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9981, 244, 28, 0, 168, "ThumbnailSection"],
+Cell[10012, 246, 2473, 52, 491, "Output",
+ CellID->281268975]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12522, 303, 28, 0, 138, "SnapshotsSection"],
+Cell[12553, 305, 2465, 52, 491, "Output",
+ CellID->103632993],
+Cell[15021, 359, 2468, 52, 491, "Output",
+ CellID->248591609],
+Cell[17492, 413, 2482, 52, 491, "Output",
+ CellID->46690140]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20011, 470, 26, 0, 332, "DetailsSection"],
+Cell[20040, 472, 920, 19, 22, "DetailNotes",
+ CellID->873231826]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20997, 496, 37, 0, 120, "ControlSuggestionsSection"],
+Cell[21037, 498, 374, 9, 22, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[21414, 509, 740, 17, 22, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[22157, 528, 340, 11, 22, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[22500, 541, 637, 15, 22, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[23140, 558, 844, 21, 22, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[23987, 581, 369, 9, 22, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[24359, 592, 1474, 32, 22, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[25836, 626, 882, 21, 22, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26755, 652, 30, 0, 152, "SearchTermsSection"],
+Cell[26788, 654, 142, 3, 22, "SearchTerms",
+ CellID->2079111781],
+Cell[26933, 659, 138, 3, 22, "SearchTerms",
+ CellID->1925282930],
+Cell[27074, 664, 58, 1, 22, "SearchTerms",
+ CellID->151220104],
+Cell[27135, 667, 61, 1, 22, "SearchTerms",
+ CellID->659186076]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27233, 673, 31, 0, 138, "RelatedLinksSection"],
+Cell[27267, 675, 590, 12, 22, "RelatedLinks",
+ CellID->1764186655],
+Cell[27860, 689, 428, 10, 22, "RelatedLinks",
+ CellID->378396456]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28325, 704, 25, 0, 136, "AuthorSection"],
+Cell[28353, 706, 393, 11, 22, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
